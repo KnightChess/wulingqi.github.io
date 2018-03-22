@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-22T09:34:27.056Z</updated>
+  <updated>2018-03-22T16:35:05.220Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WriteTest</title>
+    <link href="http://yoursite.com/2018/03/22/WriteTest/"/>
+    <id>http://yoursite.com/2018/03/22/WriteTest/</id>
+    <published>2018-03-22T15:17:08.000Z</published>
+    <updated>2018-03-22T16:35:05.220Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>字前tab会加灰框，还能拉长，如果不换行，有拉条。和代码一样</code></pre><hr><pre><code>用来表示几级标题# frist title## second title### third title</code></pre><h1 id="frist-title"><a href="#frist-title" class="headerlink" title="frist title"></a>frist title</h1><h2 id="second-title"><a href="#second-title" class="headerlink" title="second title"></a>second title</h2><h3 id="third-title"><a href="#third-title" class="headerlink" title="third title"></a>third title</h3><pre><code>![name](url) 显示链接的图片link:![this is page](http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg)</code></pre><p>link:<br><img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg" alt="this is page"></p><pre><code>[name](url) 文字超链接[bilibili](https://www.bilibili.com/)</code></pre><p><a href="https://www.bilibili.com/" target="_blank" rel="noopener">bilibili</a></p><pre><code>[![xxx](图片url)][要转移到的链接]图片超链接[![enene](http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg)](https://nodesource.com/products/nsolid)</code></pre><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg" alt="enene"></a></p><pre><code>hello:      - one      - two      - three</code></pre><p>eg:<br>hello:</p><ul><li>one</li><li>two</li><li>three</li></ul><pre><code>关键字对上跳转的意思吧，[内容]和文章最后的[内容1](链接)对上可以变成超链接，前后内容忽略大小写，也能匹配。这里注意最后一个，如果最后几个字也要跳转，单单加[1]没用得再加[2]来达到目的，此时内容为1，但是跳转到的目的为2，Markdown is a lightweight markup language based on the formatting conventions that people        naturally use in email.  As [John Gruber] writes on the [Markdown site]</code></pre><p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As <a href="http://daringfireball.net" target="_blank" rel="noopener">John Gruber</a> writes on the <a href="https://github.com/joemccann/dillinger" target="_blank" rel="noopener">Markdown site</a></p><pre><code>&gt; The overriding design goal for Markdown&apos;s&gt; formatting syntax is to make it as readable&gt; as possible. The idea is that.</code></pre><p>eg:</p><blockquote><p>The overriding design goal for Markdown’s<br>formatting syntax is to make it as readable<br>as possible. The idea is that.</p></blockquote><pre><code>代码表示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> dillinger</span><br><span class="line">$ npm install -d</span><br><span class="line">$ node app</span><br></pre></td></tr></table></figure></code></pre><p>eg:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> dillinger</span><br><span class="line">$ npm install -d</span><br><span class="line">$ node app</span><br></pre></td></tr></table></figure></p><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)&#123;</span><br><span class="line">    System.out.<span class="built_in">println</span>(<span class="string">"I think it's good"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><pre><code>制表第一行和第二行列必须对应数量相等，- 至少一个| Plugin | README | sdflj || ------ | ------ | --- || Dropbox | [plugins/dropbox/README.md][PlDb] | dsf || Github | [plugins/github/README.md][PlGh] | sdf || Google Drive | [plugins/googledrive/README.md][PlGd] | dsfs || OneDrive | [plugins/onedrive/README.md][PlOd] | dsfj || Medium | [plugins/medium/README.md][PlMe]| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |</code></pre><p>eg:<br>| Plugin | README | sdflj |<br>| —— | —— | — |<br>| Dropbox | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md" target="_blank" rel="noopener">plugins/dropbox/README.md</a> | dsf |<br>| Github | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md" target="_blank" rel="noopener">plugins/github/README.md</a> | sdf |<br>| Google Drive | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md" target="_blank" rel="noopener">plugins/googledrive/README.md</a> | dsfs |<br>| OneDrive | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md" target="_blank" rel="noopener">plugins/onedrive/README.md</a> | dsfj |<br>| Medium | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md" target="_blank" rel="noopener">plugins/medium/README.md</a><br>| Google Analytics | <a href="https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md" target="_blank" rel="noopener">plugins/googleanalytics/README.md</a> |</p><p>eg：<br>This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out <code>${package.json.version}</code> with the actual version of Dillinger.</p><pre><code>`xxx` 背景颜色加灰`I love you red line`</code></pre><p>eg:<br><code>I love you red line</code></p><p>MIT</p><pre><code>加粗 ** xxx **</code></pre><p><strong>Free Software, Hell Yeah!</strong></p><h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1><pre><code>附录：[dill]: &lt;https://github.com/joemccann/dillinger&gt;[git-repo-url]: &lt;https://github.com/joemccann/dillinger.git&gt;[john gruber]: &lt;http://daringfireball.net&gt;[df1]: &lt;http://daringfireball.net/projects/markdown/&gt;[PlMe]: &lt;https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md&gt;[PlGa]: &lt;https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md&gt;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;字前tab会加灰框，还能拉长，如果不换行，有拉条。和代码一样
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;用来表示几级标题
+# frist title
+## second title
+### third title
+&lt;/code&gt;&lt;/pre&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

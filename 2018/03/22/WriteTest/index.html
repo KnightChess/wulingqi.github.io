@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="java, python, Oracle"><title>WriteTest | IT Blog</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="../../../../css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="../../../../favicon.ico"><link rel="bookmark" href="../../../../favicon.ico"><link rel="apple-touch-icon" href="../../../../apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="../../../../apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="../../../../atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">WriteTest</h1><a id="logo" href="../../../../.">IT Blog</a><p class="description">include java, python, Oracle</p></div><div id="nav-menu"><a href="../../../../." class="current"><i class="fa fa-home"> 首页</i></a><a href="../../../../archives/"><i class="fa fa-archive"> 归档</i></a><a href="../../../../about/"><i class="fa fa-user"> 关于</i></a><a href="../../../../atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">WriteTest</h1><div class="post-meta"><a href="#comments" class="comment-count"><i data-disqus-identifier="2018/03/22/WriteTest/" class="disqus-comment-count"></i>留言</a><p><span class="date">Mar 22, 2018</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><pre><code>字前tab会加灰框，还能拉长，如果不换行，有拉条。和代码一样
+</code></pre><hr>
+<pre><code>用来表示几级标题
+# frist title
+## second title
+### third title
+</code></pre><h1 id="frist-title"><a href="#frist-title" class="headerlink" title="frist title"></a>frist title</h1><h2 id="second-title"><a href="#second-title" class="headerlink" title="second title"></a>second title</h2><h3 id="third-title"><a href="#third-title" class="headerlink" title="third title"></a>third title</h3><pre><code>![name](url) 显示链接的图片
+link:
+![this is page](http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg)
+</code></pre><p>link:<br><img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg" alt="this is page"></p>
+<pre><code>[name](url) 文字超链接
+[bilibili](https://www.bilibili.com/)
+</code></pre><p><a href="https://www.bilibili.com/" target="_blank" rel="noopener">bilibili</a></p>
+<pre><code>[![xxx](图片url)][要转移到的链接]图片超链接
+[![enene](http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg)](https://nodesource.com/products/nsolid)
+</code></pre><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg" alt="enene"></a></p>
+<pre><code>hello:
+      - one
+      - two
+      - three
+</code></pre><p>eg:<br>hello:</p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<pre><code>关键字对上跳转的意思吧，[内容]和文章最后的[内容1](链接)对上可以变成超链接，前后内容忽略大小写，也能匹配。这里注意最后一个，如果最后几个字也要跳转，单单加[1]没用得再加[2]来达到目的，此时内容为1，但是跳转到的目的为2，
+Markdown is a lightweight markup language based on the formatting conventions that people        naturally use in email.  As [John Gruber] writes on the [Markdown site]
+</code></pre><p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As <a href="http://daringfireball.net" target="_blank" rel="noopener">John Gruber</a> writes on the <a href="https://github.com/joemccann/dillinger" target="_blank" rel="noopener">Markdown site</a></p>
+<pre><code>&gt; The overriding design goal for Markdown&apos;s
+&gt; formatting syntax is to make it as readable
+&gt; as possible. The idea is that.
+</code></pre><p>eg:</p>
+<blockquote>
+<p>The overriding design goal for Markdown’s<br>formatting syntax is to make it as readable<br>as possible. The idea is that.</p>
+</blockquote>
+<pre><code>代码表示
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> dillinger</span><br><span class="line">$ npm install -d</span><br><span class="line">$ node app</span><br></pre></td></tr></table></figure>
+</code></pre><p>eg:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> dillinger</span><br><span class="line">$ npm install -d</span><br><span class="line">$ node app</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)&#123;</span><br><span class="line">    System.out.<span class="built_in">println</span>(<span class="string">"I think it's good"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>制表第一行和第二行列必须对应数量相等，- 至少一个
+| Plugin | README | sdflj |
+| ------ | ------ | --- |
+| Dropbox | [plugins/dropbox/README.md][PlDb] | dsf |
+| Github | [plugins/github/README.md][PlGh] | sdf |
+| Google Drive | [plugins/googledrive/README.md][PlGd] | dsfs |
+| OneDrive | [plugins/onedrive/README.md][PlOd] | dsfj |
+| Medium | [plugins/medium/README.md][PlMe]
+| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+</code></pre><p>eg:<br>| Plugin | README | sdflj |<br>| —— | —— | — |<br>| Dropbox | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md" target="_blank" rel="noopener">plugins/dropbox/README.md</a> | dsf |<br>| Github | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md" target="_blank" rel="noopener">plugins/github/README.md</a> | sdf |<br>| Google Drive | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md" target="_blank" rel="noopener">plugins/googledrive/README.md</a> | dsfs |<br>| OneDrive | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md" target="_blank" rel="noopener">plugins/onedrive/README.md</a> | dsfj |<br>| Medium | <a href="https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md" target="_blank" rel="noopener">plugins/medium/README.md</a><br>| Google Analytics | <a href="https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md" target="_blank" rel="noopener">plugins/googleanalytics/README.md</a> |</p>
+<p>eg：<br>This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out <code>${package.json.version}</code> with the actual version of Dillinger.</p>
+<pre><code>`xxx` 背景颜色加灰
+`I love you red line`
+</code></pre><p>eg:<br><code>I love you red line</code></p>
+<p>MIT</p>
+<pre><code>加粗 ** xxx **
+</code></pre><p><strong>Free Software, Hell Yeah!</strong></p>
+<h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1><pre><code>附录：
+[dill]: &lt;https://github.com/joemccann/dillinger&gt;
+[git-repo-url]: &lt;https://github.com/joemccann/dillinger.git&gt;
+[john gruber]: &lt;http://daringfireball.net&gt;
+[df1]: &lt;http://daringfireball.net/projects/markdown/&gt;
+[PlMe]: &lt;https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md&gt;
+[PlGa]: &lt;https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md&gt;
+</code></pre></div><div class="tags"></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="../hello-world/" class="next">Hello World</a></div><div id="comments"><div id="disqus_thread"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#frist-title"><span class="toc-text">frist title</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#second-title"><span class="toc-text">second title</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#third-title"><span class="toc-text">third title</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#待更新"><span class="toc-text">待更新</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">WriteTest</a></li><li class="post-list-item"><a class="post-list-link" href="../hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/03/">三月 2018</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="../../../../." rel="nofollow">wu07.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="../../../../js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="../../../../js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><script>var disqus_shortname = 'it-blog-1';
+var disqus_identifier = '2018/03/22/WriteTest/';
+var disqus_title = 'WriteTest';
+var disqus_url = 'http://yoursite.com/2018/03/22/WriteTest/';
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//it-blog-1.disqus.com/count.js" async></script><script type="text/javascript" src="//it-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></body></html>
