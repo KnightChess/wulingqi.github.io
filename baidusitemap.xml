@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/03/22/WriteTest/</loc>
-    <lastmod>2018-03-23T08:22:57.917Z</lastmod>
+    <lastmod>2018-03-24T01:07:00.452Z</lastmod>
     <data>
         <display>
         <title>HexoMarkdown</title>
@@ -17,6 +17,26 @@
            
              
               <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
+    <lastmod>2018-03-23T16:09:28.574Z</lastmod>
+    <data>
+        <display>
+        <title>加载properties配置文件的六种方式</title>
+        <pubTime>2018-03-23T15:13:20.000Z</pubTime>
+        
+        <tag>配置文件</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
           
         </display>
     </data>
