@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/03/25/pro-path/</loc>
-    <lastmod>2018-03-24T16:58:33.578Z</lastmod>
+    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
+    <lastmod>2018-03-25T01:31:29.142Z</lastmod>
     <data>
         <display>
-        <title>getResourceAsStream和getSystemResourceAsStream等获取配置文件的路径表示</title>
-        <pubTime>2018-03-24T16:16:26.000Z</pubTime>
+        <title>加载properties配置文件的六种方式</title>
+        <pubTime>2018-03-23T15:13:20.000Z</pubTime>
         
-        <tag>properties</tag>
+        <tag>配置文件</tag>
          
          
            
@@ -24,14 +24,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
-    <lastmod>2018-03-24T16:54:25.133Z</lastmod>
+    <loc>http://yoursite.com/2018/03/25/pro-path/</loc>
+    <lastmod>2018-03-24T16:58:33.578Z</lastmod>
     <data>
         <display>
-        <title>加载properties配置文件的六种方式</title>
-        <pubTime>2018-03-23T15:13:20.000Z</pubTime>
+        <title>getResourceAsStream和getSystemResourceAsStream等获取配置文件的路径表示</title>
+        <pubTime>2018-03-24T16:16:26.000Z</pubTime>
         
-        <tag>配置文件</tag>
+        <tag>properties</tag>
          
          
            
