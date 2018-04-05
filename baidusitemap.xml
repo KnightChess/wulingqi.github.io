@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/03/javaIO-summary/</loc>
+    <lastmod>2018-04-05T07:02:31.642Z</lastmod>
+    <data>
+        <display>
+        <title>javaIO流的总结（更新中）</title>
+        <pubTime>2018-04-03T14:11:28.000Z</pubTime>
+        
+        <tag>IO</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/05/asListException/</loc>
+    <lastmod>2018-04-05T07:01:37.834Z</lastmod>
+    <data>
+        <display>
+        <title>关于java.lang.UnsupportedOperationException异常</title>
+        <pubTime>2018-04-05T03:37:56.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
     <lastmod>2018-03-25T03:05:07.291Z</lastmod>
     <data>
