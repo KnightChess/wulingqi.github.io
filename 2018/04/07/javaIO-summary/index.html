@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="java, python, Oracle"><title>javaIO流的总结（更新中） | KnightChess</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="../../../../css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="../../../../favicon.ico"><link rel="bookmark" href="../../../../favicon.ico"><link rel="apple-touch-icon" href="../../../../apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="../../../../apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="../../../../atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">javaIO流的总结（更新中）</h1><a id="logo" href="../../../../.">KnightChess</a><p class="description">The shortest answer is doing.</p></div><div id="nav-menu"><a href="../../../../." class="current"><i class="fa fa-home"> 首页</i></a><a href="../../../../archives/"><i class="fa fa-archive"> 归档</i></a><a href="../../../../about/"><i class="fa fa-user"> 关于</i></a><a href="../../../../atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">javaIO流的总结（更新中）</h1><div class="post-meta"><a href="#comments" class="comment-count"><i data-disqus-identifier="2018/04/07/javaIO-summary/" class="disqus-comment-count"></i>留言</a><p><span class="date">Apr 07, 2018</span><span><a href="../../../../categories/java/" class="category">java</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><p>引言：这里不会讲各种流的详细用法。</p>
+<p><img src="/images/javaIO.png" alt="我的流结构"></p>
+<blockquote>
+<p>注意：original Stream（也称为节点流） 和 wrapper Stream（也称为处理流）未包装类和包装类。</p>
+</blockquote>
+<blockquote>
+<p>java可分为输出流和输入流，根据流类型，可分为字符流和字节流，如下表：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">字节流</th>
+<th>字符流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">输入流</td>
+<td style="text-align:center">InputStream</td>
+<td>Reader</td>
+</tr>
+<tr>
+<td style="text-align:center">输出流</td>
+<td style="text-align:center">OutputStream</td>
+<td>Writer</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>实际使用中我们一般不会用到上面说的四类，而是使用继承它们的子类，不同的子类负责着不同的功能，以便于我开发不同的应用。<br>用途主要有以下几种：</p>
+</blockquote>
+<ul>
+<li>文件访问</li>
+<li>网络访问</li>
+<li>内存缓存访问</li>
+<li>线程内部通信</li>
+<li>缓冲</li>
+<li>过滤</li>
+<li>解析</li>
+<li>读写文本，基本数据类型，对象</li>
+</ul>
+<h3 id="Java-IO-类概述表"><a href="#Java-IO-类概述表" class="headerlink" title="Java IO 类概述表"></a>Java IO 类概述表</h3><p><img src="/images/IO.png" alt=""></p>
+<blockquote>
+<p>该表使用自并发编程网的<a href="http://ifeve.com/java-io-3/" target="_blank" rel="noopener">javaIO</a></p>
+</blockquote>
+<blockquote>
+<p>各做基类流继承下去的分为两类，节点的流和处理流：<br>字节节点流只具有读取字节内容的方法，比如FileInputStream流和FileOutputStream流只能向文件中读取或者向文件中写入字节，对于各种类型的数据，如果是写入文件，必须转换成字节数组后写入文件，若是读取，那么就得转换成相应的类型。 而处理流，例如DataOutputStream提供了各种对象中写入类型的方法，方便编程人员。</p>
+</blockquote>
+<h2 id="1-字节流"><a href="#1-字节流" class="headerlink" title="1. 字节流"></a>1. 字节流</h2><h3 id="1-1-InputStream作为基类"><a href="#1-1-InputStream作为基类" class="headerlink" title="1.1 InputStream作为基类"></a>1.1 InputStream作为基类</h3><h4 id="1-1-1-ByteArrayInputStream"><a href="#1-1-1-ByteArrayInputStream" class="headerlink" title="1.1.1 ByteArrayInputStream"></a>1.1.1 ByteArrayInputStream</h4><blockquote>
+<p>内部通过建立字节数组buf缓冲区来读取保存数据</p>
+</blockquote>
+<p>适用场景:<br>此流是内存操作流，这个流可实现类似内存虚拟文件的功能，将数据暂存在缓存区中，可以使程序不需要产生相应的临时文件，避免从存储介质上读取，提升效率。</p>
+<p>注意:<br>此流没有提供close关闭流的操作，当没有对其的强引用时，就会自动被GC，但是也会导致内存溢出，可以使用org.apache.commons.io.IoUtiles关闭流</p>
+<h4 id="1-1-2-FileInputStream"><a href="#1-1-2-FileInputStream" class="headerlink" title="1.1.2 FileInputStream"></a>1.1.2 FileInputStream</h4><blockquote>
+<p>把一个文件作为文件输入流，实现对文件的读取操作，访问硬盘</p>
+</blockquote>
+<p>适用场景:<br>从名字上就能看出应用，对硬盘上的文件的存取</p>
+<h4 id="1-1-3-SocketInputStream"><a href="#1-1-3-SocketInputStream" class="headerlink" title="1.1.3 SocketInputStream"></a>1.1.3 SocketInputStream</h4><blockquote>
+<p>就和名字一样，适用于网络通信中。</p>
+</blockquote>
+<h4 id="1-1-4-PipeInputStream"><a href="#1-1-4-PipeInputStream" class="headerlink" title="1.1.4 PipeInputStream"></a>1.1.4 PipeInputStream</h4><blockquote>
+<p>通多创建管道实现线程间的通信</p>
+</blockquote>
+<h4 id="1-1-5-BufferedInputStream"><a href="#1-1-5-BufferedInputStream" class="headerlink" title="1.1.5 BufferedInputStream"></a>1.1.5 BufferedInputStream</h4><blockquote>
+<p>本质是通过一个内部缓冲数组实现的，默认大小8192，实现滑动读取的功能，事先把size大小的数据从磁盘中读取到缓冲区上，然后实际操作都在缓冲区中进行，如果数据超过缓冲区，那么将重新载入数据。减少了磁盘IO，提高了效率。</p>
+</blockquote>
+<p>用途：<br>因为其缓存的功能，可以起到改善效率的作用。通过源码可以看出，构造器的形参是InputStream，所以可以对其进行改善效率，包括FileInputStream等，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">BufferedInputStream bufferedInputStream = <span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"zzz.txt"</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="1-1-6-DataInputStream"><a href="#1-1-6-DataInputStream" class="headerlink" title="1.1.6 DataInputStream"></a>1.1.6 DataInputStream</h4><blockquote>
+<p>封装了对字节流的解析，实现了对基本数据类型的基本操作和对读取UTF格式的方法，当然，读取字符的还有Rread等相关的字符流。</p>
+</blockquote>
+<h4 id="1-1-7-PushbackInputStream"><a href="#1-1-7-PushbackInputStream" class="headerlink" title="1.1.7 PushbackInputStream"></a>1.1.7 PushbackInputStream</h4><blockquote>
+<p>回推流，把从缓存区中读出来的数据再原路推回去，没有破坏输入流里的内容结构。</p>
+</blockquote>
+<p>注意：<br>PushbackInputStream对象会使得InputStream对象（用于创建PushbackInputStream对象）的mark()或reset()方法无效。对于准备使用mark()或reset()方法的任何流来说，都应当使用markSupported()方法进行检查。</p>
+<h4 id="1-1-8-ObjectInputStream与ObjectOutputStream"><a href="#1-1-8-ObjectInputStream与ObjectOutputStream" class="headerlink" title="1.1.8 ObjectInputStream与ObjectOutputStream"></a>1.1.8 ObjectInputStream与ObjectOutputStream</h4><blockquote>
+<p>ObjectOutputStream 将 Java 对象的基本数据类型和图形写入 OutputStream。可以使用 ObjectInputStream 读取（重构）对象。通过在流中使用文件可以实现对象的持久存储。如果流是网络套接字流，则可以在另一台主机上或另一个进程中重构对象。<br>只能将支持 java.io.Serializable 接口的对象写入流中。每个 serializable 对象的类都被编码，编码内容包括类名和类签名、对象的字段值和数组值，以及从初始对象中引用的其他所有对象的闭包。<br>writeObject 方法用于将对象写入流中。所有对象（包括 String 和数组）都可以通过 writeObject 写入。可将多个对象或基元写入流中。必须使用与写入对象时相同的类型和顺序从相应 ObjectInputstream 中读回对象。</p>
+</blockquote>
+<h4 id="1-1-9-SequenceInputStream"><a href="#1-1-9-SequenceInputStream" class="headerlink" title="1.1.9 SequenceInputStream"></a>1.1.9 SequenceInputStream</h4><blockquote>
+<p>合并流，将多个源合并成一个源</p>
+</blockquote>
+<h3 id="1-2-OutputStream作为基类"><a href="#1-2-OutputStream作为基类" class="headerlink" title="1.2 OutputStream作为基类"></a>1.2 OutputStream作为基类</h3><h4 id="1-2-1-PrintStream"><a href="#1-2-1-PrintStream" class="headerlink" title="1.2.1 PrintStream"></a>1.2.1 PrintStream</h4><blockquote>
+<p>PrintStream 是打印输出流，它继承于FilterOutputStream。<br>PrintStream 是用来装饰其它输出流。它能为其他输出流添加了功能，使它们能够方便地打印各种数据值表示形式。<br>与其他输出流不同，PrintStream 永远不会抛出 IOException；它产生的IOException会被自身的函数所捕获并设置错误标记， 用户可以通过 checkError() 返回错误标记，从而查看PrintStream内部是否产生了IOException。<br>另外，PrintStream 提供了自动flush 和 字符集设置功能。所谓自动flush，就是往PrintStream写入的数据会立刻调用flush()函数。</p>
+</blockquote>
+<h4 id="这里对比一下PrintStream和DataOutputStream（原文链接"><a href="#这里对比一下PrintStream和DataOutputStream（原文链接" class="headerlink" title="这里对比一下PrintStream和DataOutputStream（原文链接)"></a>这里对比一下PrintStream和DataOutputStream（<a href="https://www.cnblogs.com/skywang12345/p/io_16.html" target="_blank" rel="noopener">原文链接</a>)</h4><p>相同点：都是继承与FileOutputStream，用于包装其它输出流。<br>不同点：</p>
+<p>(01) PrintStream和DataOutputStream 都可以将数据格式化输出；但它们在“输出字符串”时的编码不同。</p>
+<blockquote>
+<p>PrintStream是输出时采用的是用户指定的编码(创建PrintStream时指定的)，若没有指定，则采用系统默认的字符编码。而DataOutputStream则采用的是UTF-8。<br>关于UTF-8的字符编码可以参考“字符编码(ASCII，Unicode和UTF-8) 和 大小端”<br>关于DataOutputStream的更多内容，可以参考“java io系列15之 DataOutputStream(数据输出流)的认知、源码和示例”</p>
+</blockquote>
+<p>(02) 它们的写入数据时的异常处理机制不同。</p>
+<blockquote>
+<p>DataOutputStream在通过write()向“输出流”中写入数据时，若产生IOException，会抛出。<br>而PrintStream在通过write()向“输出流”中写入数据时，若产生IOException，则会在write()中进行捕获处理；并设置trouble标记(用于表示产生了异常)为true。用户可以通过checkError()返回trouble值，从而检查输出流中是否产生了异常。</p>
+</blockquote>
+<p>(03) 构造函数不同</p>
+<blockquote>
+<p>DataOutputStream的构造函数只有一个：DataOutputStream(OutputStream out)。即它只支持以输出流out作为“DataOutputStream的输出流”。<br>而PrintStream的构造函数有许多：和DataOutputStream一样，支持以输出流out作为“PrintStream输出流”的构造函数；还支持以“File对象”或者“String类型的文件名对象”的构造函数。<br>而且，在PrintStream的构造函数中，能“指定字符集”和“是否支持自动flush()操作”。</p>
+</blockquote>
+<p>(04) 目的不同</p>
+<blockquote>
+<p>DataOutputStream的作用是装饰其它的输出流，它和DataInputStream配合使用：允许应用程序以与机器无关的方式从底层输入流中读写java数据类型。<br>而PrintStream的作用虽然也是装饰其他输出流，但是它的目的不是以与机器无关的方式从底层读写java数据类型；而是为其它输出流提供打印各种数据值表示形式，使其它输出流能方便的通过print(), println()或printf()等输出各种格式的数据。</p>
+</blockquote>
+<h2 id="2-字符流"><a href="#2-字符流" class="headerlink" title="2. 字符流"></a>2. 字符流</h2><h3 id="2-1-Reader作为基类"><a href="#2-1-Reader作为基类" class="headerlink" title="2.1 Reader作为基类"></a>2.1 Reader作为基类</h3><h4 id="2-1-1-CharArrayReader"><a href="#2-1-1-CharArrayReader" class="headerlink" title="2.1.1 CharArrayReader"></a>2.1.1 CharArrayReader</h4><h4 id="2-1-2-InputStreamReader"><a href="#2-1-2-InputStreamReader" class="headerlink" title="2.1.2 InputStreamReader"></a>2.1.2 InputStreamReader</h4><h4 id="2-1-3-FileReader"><a href="#2-1-3-FileReader" class="headerlink" title="2.1.3 FileReader"></a>2.1.3 FileReader</h4><h4 id="2-1-4-PipedReader"><a href="#2-1-4-PipedReader" class="headerlink" title="2.1.4 PipedReader"></a>2.1.4 PipedReader</h4><h4 id="2-1-5-StringReader"><a href="#2-1-5-StringReader" class="headerlink" title="2.1.5 StringReader"></a>2.1.5 StringReader</h4><h4 id="2-1-6-BufferedReader"><a href="#2-1-6-BufferedReader" class="headerlink" title="2.1.6 BufferedReader"></a>2.1.6 BufferedReader</h4><h4 id="2-1-7-LinNumberReader"><a href="#2-1-7-LinNumberReader" class="headerlink" title="2.1.7 LinNumberReader"></a>2.1.7 LinNumberReader</h4><h4 id="2-1-8-PushBackReader"><a href="#2-1-8-PushBackReader" class="headerlink" title="2.1.8 PushBackReader"></a>2.1.8 PushBackReader</h4><h3 id="2-2-Writer作为基类"><a href="#2-2-Writer作为基类" class="headerlink" title="2.2 Writer作为基类"></a>2.2 Writer作为基类</h3><h4 id="2-2-1-PrintWriter"><a href="#2-2-1-PrintWriter" class="headerlink" title="2.2.1 PrintWriter"></a>2.2.1 PrintWriter</h4><h2 id="3-RandomAccessFile"><a href="#3-RandomAccessFile" class="headerlink" title="3. RandomAccessFile"></a>3. RandomAccessFile</h2><h2 id="4-字符和字节流的转换"><a href="#4-字符和字节流的转换" class="headerlink" title="4. 字符和字节流的转换"></a>4. 字符和字节流的转换</h2><h2 id="5-一般使用规则-输入和输出类似"><a href="#5-一般使用规则-输入和输出类似" class="headerlink" title="5.一般使用规则(输入和输出类似)"></a>5.一般使用规则(输入和输出类似)</h2><p>1.按数据来源分类：</p>
+<ul>
+<li>文件：FileInputStream, FileReader</li>
+<li>byte[]: ByteArrayInputStream</li>
+<li>char[]: CharArrayReader</li>
+<li>String: StringBufferInputStream, StringReader</li>
+<li>网络数据流: InputStream, Reader</li>
+</ul>
+<p>2.按是否格式化输出</p>
+<ul>
+<li>格式化输出： PrintStream, PrintWriter</li>
+</ul>
+<p>3.按是否要缓冲</p>
+<ul>
+<li>BufferedInputStream, BufferedReader</li>
+</ul>
+<p>4.按数据格式：</p>
+<ul>
+<li>字节流： InputStream和OutputStream以及它们的子类</li>
+<li>字符流： Reader和Writer以及它们的子类</li>
+</ul>
+<p>5.按输入输出：</p>
+<ul>
+<li>不用写，都懂</li>
+</ul>
+<p>6.特别的：</p>
+<ul>
+<li>Stream到Reader和Writer的转换类： InputStreamReader和OutputStreamWriter</li>
+<li>对象输入输出： ObjectStream, ObjectStream</li>
+<li>进程通信： PipeInputStream, PipeReader</li>
+<li>合并输入： SequenceInputStream</li>
+<li>其它： PushbackInputStream, PushbackReader, LineNumberInputStream, LineNumberReader</li>
+</ul>
+<h2 id="6-构造准则"><a href="#6-构造准则" class="headerlink" title="6. 构造准则"></a>6. 构造准则</h2><pre><code>决定使用哪个类以及它的构造进程的一般准则如下（不考虑特殊需要）：
+
+首先，考虑最原始的数据格式是什么： 原则四
+
+第二，是输入还是输出：原则五
+
+第三，是否需要转换流：原则六第 1 点
+
+第四，数据来源（去向）是什么：原则一
+
+第五，是否要缓冲：原则三 （特别注明：一定要注意的是 readLine() 是否有定义，有什么比 read, write 更特殊的输入或输出方法）
+
+第六，是否要格式化输出：原则二
+</code></pre><p>借鉴<a href="http://yuanzhitofaraway.lofter.com/post/2b181d_aac8fcf" target="_blank" rel="noopener">远志，志在远方</a></p>
+<p>【1】内存操作流： 用于处理临时存储的信息，程序结束，数据就从内存中消失。</p>
+<ul>
+<li>字节数组：</li>
+<li>ByteArrayInputStream</li>
+<li><p>ByteArrayOutputStream</p>
+</li>
+<li><p>字符数组：</p>
+</li>
+<li>CharArrayReader</li>
+<li><p>CharArrayWriter</p>
+</li>
+<li><p>字符串：</p>
+</li>
+<li>StringReader</li>
+<li>StringWriter</li>
+</ul>
+</div><div class="tags"><a href="../../../../tags/IO/">IO</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="../../05/auto-unpacking-packing/" class="next">java中自动拆装箱的一些问题</a></div><div id="comments"><div id="disqus_thread"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-IO-类概述表"><span class="toc-text">Java IO 类概述表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-字节流"><span class="toc-text">1. 字节流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-InputStream作为基类"><span class="toc-text">1.1 InputStream作为基类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-ByteArrayInputStream"><span class="toc-text">1.1.1 ByteArrayInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-FileInputStream"><span class="toc-text">1.1.2 FileInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-SocketInputStream"><span class="toc-text">1.1.3 SocketInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4-PipeInputStream"><span class="toc-text">1.1.4 PipeInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-BufferedInputStream"><span class="toc-text">1.1.5 BufferedInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-6-DataInputStream"><span class="toc-text">1.1.6 DataInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-7-PushbackInputStream"><span class="toc-text">1.1.7 PushbackInputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-8-ObjectInputStream与ObjectOutputStream"><span class="toc-text">1.1.8 ObjectInputStream与ObjectOutputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-9-SequenceInputStream"><span class="toc-text">1.1.9 SequenceInputStream</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-OutputStream作为基类"><span class="toc-text">1.2 OutputStream作为基类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-PrintStream"><span class="toc-text">1.2.1 PrintStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#这里对比一下PrintStream和DataOutputStream（原文链接"><span class="toc-text">这里对比一下PrintStream和DataOutputStream（原文链接)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-字符流"><span class="toc-text">2. 字符流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Reader作为基类"><span class="toc-text">2.1 Reader作为基类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-CharArrayReader"><span class="toc-text">2.1.1 CharArrayReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-InputStreamReader"><span class="toc-text">2.1.2 InputStreamReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-FileReader"><span class="toc-text">2.1.3 FileReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-4-PipedReader"><span class="toc-text">2.1.4 PipedReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-5-StringReader"><span class="toc-text">2.1.5 StringReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-6-BufferedReader"><span class="toc-text">2.1.6 BufferedReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-7-LinNumberReader"><span class="toc-text">2.1.7 LinNumberReader</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-8-PushBackReader"><span class="toc-text">2.1.8 PushBackReader</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Writer作为基类"><span class="toc-text">2.2 Writer作为基类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-PrintWriter"><span class="toc-text">2.2.1 PrintWriter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-RandomAccessFile"><span class="toc-text">3. RandomAccessFile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-字符和字节流的转换"><span class="toc-text">4. 字符和字节流的转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-一般使用规则-输入和输出类似"><span class="toc-text">5.一般使用规则(输入和输出类似)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-构造准则"><span class="toc-text">6. 构造准则</span></a></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">javaIO流的总结（更新中）</a></li><li class="post-list-item"><a class="post-list-link" href="../../05/auto-unpacking-packing/">java中自动拆装箱的一些问题</a></li><li class="post-list-item"><a class="post-list-link" href="../../05/asListException/">关于java.lang.UnsupportedOperationException异常</a></li><li class="post-list-item"><a class="post-list-link" href="../../../03/25/pro-path/">getResourceAsStream和getSystemResourceAsStream等获取配置文件的路径表示</a></li><li class="post-list-item"><a class="post-list-link" href="../../../03/23/sixWayLoadProperties/">加载properties配置文件的六种方式</a></li><li class="post-list-item"><a class="post-list-link" href="../../../03/22/WriteTest/">HexoMarkdown</a></li><li class="post-list-item"><a class="post-list-link" href="../../../03/22/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a><span class="category-list-count">5</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="../../../../tags/markdown/" style="font-size: 15px;">markdown</a> <a href="../../../../tags/随笔/" style="font-size: 15px;">随笔</a> <a href="../../../../tags/IO/" style="font-size: 15px;">IO</a> <a href="../../../../tags/properties/" style="font-size: 15px;">properties</a> <a href="../../../../tags/配置文件/" style="font-size: 15px;">配置文件</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/03/">三月 2018</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html" title="BlueLake configuration" target="_blank">BlueLake configuration</a><ul></ul><a href="https://github.com/chaooo/hexo-theme-BlueLake" title="BlukeLake" target="_blank">BlukeLake</a><ul></ul><a href="https://www.bilibili.com/" title="None" target="_blank">None</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="../../../../." rel="nofollow">wu07.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-116282589-1','auto');ga('send','pageview');
+</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8f524dc8ae889f1df803e01d5eb854ac";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="../../../../js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="../../../../js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><script>var disqus_shortname = 'it-blog-1';
+var disqus_identifier = '2018/04/07/javaIO-summary/';
+var disqus_title = 'javaIO流的总结（更新中）';
+var disqus_url = 'http://yoursite.com/2018/04/07/javaIO-summary/';
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//it-blog-1.disqus.com/count.js" async></script><script type="text/javascript" src="//it-blog-1.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></body></html>
