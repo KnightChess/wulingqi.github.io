@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/05/auto-unpacking-packing/</loc>
+    
+    <lastmod>2018-04-10T06:43:20.320Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
+    
+    <lastmod>2018-04-10T06:36:26.548Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/09/easyMock-simple-use/</loc>
     
-    <lastmod>2018-04-09T13:54:44.303Z</lastmod>
+    <lastmod>2018-04-10T06:15:32.068Z</lastmod>
     
   </url>
   
@@ -30,23 +44,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/05/auto-unpacking-packing/</loc>
-    
-    <lastmod>2018-04-07T03:36:30.815Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/04/05/asListException/</loc>
     
     <lastmod>2018-04-05T07:01:37.834Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
-    
-    <lastmod>2018-03-25T03:05:07.291Z</lastmod>
     
   </url>
   
