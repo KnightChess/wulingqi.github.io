@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/12/internalclass/</loc>
+    <lastmod>2018-04-12T08:56:06.263Z</lastmod>
+    <data>
+        <display>
+        <title>java内部类(非blog，Not recommended)(update ing)</title>
+        <pubTime>2018-04-12T08:18:22.896Z</pubTime>
+        
+        <tag>java笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/12/abstract-class/</loc>
+    <lastmod>2018-04-12T08:54:54.287Z</lastmod>
+    <data>
+        <display>
+        <title>抽象类和接口(非blog，Not recommended)(update ing)</title>
+        <pubTime>2018-04-12T08:54:54.000Z</pubTime>
+        
+        <tag>java笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/04/12/ppt/</loc>
+    <lastmod>2018-04-12T08:54:40.575Z</lastmod>
+    <data>
+        <display>
+        <title>Java访问权限修饰符(非blog，Not recommended)(update ing)</title>
+        <pubTime>2018-04-12T08:51:23.000Z</pubTime>
+        
+        <tag>java笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/09/easyMock-simple-use/</loc>
     <lastmod>2018-04-10T06:56:18.452Z</lastmod>
     <data>
@@ -73,9 +133,9 @@
         <title>IDEA中dependencies和libraries的区别</title>
         <pubTime>2018-04-09T11:50:06.000Z</pubTime>
         
-        <tag>随笔</tag>
-         
         <tag>idea</tag>
+         
+        <tag>随笔</tag>
          
          
            
@@ -92,9 +152,9 @@
         <title>idea-webApp简单运行环境配置</title>
         <pubTime>2018-04-08T04:41:10.000Z</pubTime>
         
-        <tag>随笔</tag>
-         
         <tag>idea</tag>
+         
+        <tag>随笔</tag>
          
         <tag>applet</tag>
          
@@ -109,7 +169,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/04/07/javaIO-summary/</loc>
+    <loc>http://yoursite.com/2018/04/07/IO/javaIO-summary/</loc>
     <lastmod>2018-04-07T06:22:38.744Z</lastmod>
     <data>
         <display>

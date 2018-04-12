@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-10T06:56:18.452Z</updated>
+  <updated>2018-04-12T08:54:54.287Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>抽象类和接口(非blog，Not recommended)(update ing)</title>
+    <link href="http://yoursite.com/2018/04/12/abstract-class/"/>
+    <id>http://yoursite.com/2018/04/12/abstract-class/</id>
+    <published>2018-04-12T08:54:54.000Z</published>
+    <updated>2018-04-12T08:54:54.287Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="什么是抽象类"><a href="#什么是抽象类" class="headerlink" title="什么是抽象类"></a>什么是抽象类</h3><p>首先了解什么是抽象方法，抽象方法就是只声明，没有具体实现，eg如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">zzz</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p><p>必须用abstract进行修饰，如果一个类中含有抽象方法，那么称这个类为抽象方法，抽象方法必须也用abstract进行修饰。</p><blockquote><p>注意： 抽象方法不能用来创建对象。这里来自某blog的大佬说在java编程思想中对抽象类的定义为“包含抽象方法的类”，但是后面看源码时有的抽象类其实内部什么方法都没有，然而还是声明成抽象类。算了，细节问题不要在意。</p></blockquote><h3 id="有什么用，用在哪"><a href="#有什么用，用在哪" class="headerlink" title="有什么用，用在哪:"></a>有什么用，用在哪:</h3><p>怎么说，按我的理解，就是为了继承实现多态的，多态的概念就不用解释了</p><h3 id="怎么用？-不可能教你怎么用的，自己看书，自己谷歌"><a href="#怎么用？-不可能教你怎么用的，自己看书，自己谷歌" class="headerlink" title="怎么用？(不可能教你怎么用的，自己看书，自己谷歌)"></a>怎么用？(不可能教你怎么用的，自己看书，自己谷歌)</h3><h3 id="注意的问题"><a href="#注意的问题" class="headerlink" title="注意的问题"></a>注意的问题</h3><ol><li>访问修饰符里虽然也有提到过，但是抽象类的方法必须为public或者protected，毕竟子类必须有能够访问的能力进行事项</li><li>如果子类继承了抽象父类，如果没有全部重写父类的所有抽象方法，那么子类依然是抽象类，依然不能实例化。</li></ol><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="什么是接口"><a href="#什么是接口" class="headerlink" title="什么是接口"></a>什么是接口</h3><p>怎么说，可以理解为纯粹的抽象类吧，接口泛指别人调用的方法或者函数，是对行为的抽象（下面对比的时候会解释的）</p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol><li>接口中可以含有 变量和方法。但是要注意，接口中的变量会被隐式地指定为public static final变量（并且只能是public static final变量，用private修饰会报编译错误），而方法会被隐式地指定为public abstract方法且只能是public abstract方法（用其他关键字，比如private、protected、static、 final等修饰会报编译错误），并且接口中所有的方法不能有具体的实现，也就是说，接口中的方法必须都是抽象方法。从这里可以隐约看出接口和抽象类的区别，接口是一种极度抽象的类型，它比抽象类更加“抽象”，并且一般情况下不在接口中定义变量。</li><li>重点： 第1个注意点中，只适合老版本，jdk1.8以下的版本，在jdk1.8中接口加入了新概念，扩展了接口的含义：默认方法和静态方法，默认方法使得接口有点类似traits吧，不过要实现的目标不一样。默认方法使得开发者可以在不破坏二进制兼容性的前提下，王现存的接口中添加新的方法，即不强制实现了该接口的类也可同时实现这个新加的方法。（可以通过转换调用）可以看出，默认方法和抽象方法之间的区别在于抽象方法需要实现，而默认方法不需要。接口提供的默认方法会被接口的实现类继承或者覆写。看个简单的例子</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">interface</span> <span class="title">Defaulable</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Interfaces now allow default methods, the implementer may or </span></span><br><span class="line">    <span class="comment">// may not implement (override) them.</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">notRequired</span><span class="params">()</span> </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Default implementation"</span>; </span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultableImpl</span> <span class="keyword">implements</span> <span class="title">Defaulable</span> </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">OverridableImpl</span> <span class="keyword">implements</span> <span class="title">Defaulable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">notRequired</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Overridden implementation"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//例子来源：（其实是我懒得写）</span></span><br><span class="line"><span class="comment">//作者：杜琪</span></span><br><span class="line"><span class="comment">//链接：https://www.jianshu.com/p/5b800057f2d8</span></span><br><span class="line"><span class="comment">//著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span></span><br></pre></td></tr></table></figure><p><code>此默认方法扩充了Collection的方法，比如stream(), parallelStream()等，Stream也是java8的一大亮点，专注于对集合对象进行各种流弊的操作，可以很方便写出高性能的并发程序，偏题了。</code></p><h2 id="那么，抽象类和接口的区别"><a href="#那么，抽象类和接口的区别" class="headerlink" title="那么，抽象类和接口的区别"></a>那么，抽象类和接口的区别</h2><p>语法层面上的区别（jdk1.8以下版本)</p><ul><li>抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract 方法；</li><li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的；</li><li>接口中不能含有静态代码块以及静态方法，而抽象类可以有静态代码块和静态方法；</li><li>一个类只能继承一个抽象类，而一个类却可以实现多个接口。</li></ul><p>设计层面上的区别(<a href="http://www.importnew.com/18780.html" target="_blank" rel="noopener">那么多字，肯定不是我自己写的</a>)</p><ol><li>抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。举个简单的例子，飞机和鸟是不同类的事物，但是它们都有一个共性，就是都会飞。那么在设计的时候，可以将飞机设计为一个类Airplane，将鸟设计为一个类Bird，但是不能将 飞行 这个特性也设计为类，因此它只是一个行为特性，并不是对一类事物的抽象描述。此时可以将 飞行 设计为一个接口Fly，包含方法fly( )，然后Airplane和Bird分别根据自己的需要实现Fly这个接口。然后至于有不同种类的飞机，比如战斗机、民用飞机等直接继承Airplane即可，对于鸟也是类似的，不同种类的鸟直接继承Bird类即可。从这里可以看出，继承是一个 “是不是”的关系，而 接口 实现则是 “有没有”的关系。如果一个类继承了某个抽象类，则子类必定是抽象类的种类，而接口实现则是有没有、具备不具备的关系，比如鸟是否能飞（或者是否具备飞行这个特点），能飞行则可以实现这个接口，不能飞行就不实现这个接口。</li><li>设计层面不同，抽象类作为很多子类的父类，它是一种模板式设计。而接口是一种行为规范，它是一种辐射式设计。什么是模板式设计？最简单例子，大家都用过ppt里面的模板，如果用模板A设计了ppt B和ppt C，ppt B和ppt C公共的部分就是模板A了，如果它们的公共部分需要改动，则只需要改动模板A就可以了，不需要重新对ppt B和ppt C进行改动。而辐射式设计，比如某个电梯都装了某种报警器，一旦要更新报警器，就必须全部更新。也就是说对于抽象类，如果需要添加新的方法，可以直接在抽象类中添加具体的实现，子类可以不进行变更；而对于接口则不行，如果接口进行了变更，则所有实现这个接口的类都必须进行相应的改动。</li></ol><blockquote><p>简单来说，抽象类就是个模板类，接口是一种行为规范，就像上面说的辐射式设计，但是，对于新版本的jdk1.8，个人感觉也具有一定模板式设计了，都引入的默认方法了，和抽象类中非抽象方法有什么区别。但是，其设计层面的区别还主要是接口是对行为的抽象，新版本的小疑问以后再做考虑。</p></blockquote><h2 id="接口其它应用"><a href="#接口其它应用" class="headerlink" title="接口其它应用"></a>接口其它应用</h2><p>应用很多，有与设计模式相关的适配器，工厂模式等，具体详细请看java便构成思想，还有接口为什么优于抽象类等相关问题请看effective java。</p><h2 id="补充：-对上面新版本中接口不就是抽象类的进行解释"><a href="#补充：-对上面新版本中接口不就是抽象类的进行解释" class="headerlink" title="补充： 对上面新版本中接口不就是抽象类的进行解释"></a>补充： 对上面新版本中接口不就是抽象类的进行解释</h2><p>详细见<a href="https://my.oschina.net/benhaile/blog/176007" target="_blank" rel="noopener">开源中国</a></p><h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p><a href="http://www.importnew.com/18780.html" target="_blank" rel="noopener">http://www.importnew.com/18780.html</a><br><a href="https://www.jianshu.com/p/038f0b356e9a" target="_blank" rel="noopener">https://www.jianshu.com/p/038f0b356e9a</a><br><a href="http://arthur503.github.io/blog/2013/10/10/Java-access-control.html" target="_blank" rel="noopener">http://arthur503.github.io/blog/2013/10/10/Java-access-control.html</a><br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;抽象类&quot;&gt;&lt;a href=&quot;#抽象类&quot; class=&quot;headerlink&quot; title=&quot;抽象类&quot;&gt;&lt;/a&gt;抽象类&lt;/h2&gt;&lt;h3 id=&quot;什么是抽象类&quot;&gt;&lt;a href=&quot;#什么是抽象类&quot; class=&quot;headerlink&quot; title=&quot;什么是抽象类&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java笔记" scheme="http://yoursite.com/tags/java%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java访问权限修饰符(非blog，Not recommended)(update ing)</title>
+    <link href="http://yoursite.com/2018/04/12/ppt/"/>
+    <id>http://yoursite.com/2018/04/12/ppt/</id>
+    <published>2018-04-12T08:51:23.000Z</published>
+    <updated>2018-04-12T08:54:40.575Z</updated>
+    
+    <content type="html"><![CDATA[<p>引言：java中有四种访问修饰符，public，protected，defaul（实际上没有这个关键词（大概懂我意思吧），就是默认的同一包内访问权限。），private，用于对方法，属性，类的修饰，但是部分可用。</p><p>访问权限和使用类别见一下两个表格</p><p><code>表格(一)</code></p><table><thead><tr><th style="text-align:center">修饰符</th><th style="text-align:center">修饰成员变量和函数</th><th style="text-align:center">修饰类</th></tr></thead><tbody><tr><td style="text-align:center">public</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td></tr><tr><td style="text-align:center">protected</td><td style="text-align:center">yes</td><td style="text-align:center">no</td></tr><tr><td style="text-align:center">default</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td></tr><tr><td style="text-align:center">private</td><td style="text-align:center">yes</td><td style="text-align:center">no</td></tr></tbody></table><p><code>表格(二)</code></p><table><thead><tr><th style="text-align:center">修饰符</th><th style="text-align:center">当前类</th><th style="text-align:center">同一包内</th><th style="text-align:center">子孙类</th><th style="text-align:center">其它包</th></tr></thead><tbody><tr><td style="text-align:center">public</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td></tr><tr><td style="text-align:center">protected</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td><td style="text-align:center">no</td></tr><tr><td style="text-align:center">default</td><td style="text-align:center">yes</td><td style="text-align:center">yes</td><td style="text-align:center">no</td><td style="text-align:center">no</td></tr><tr><td style="text-align:center">private</td><td style="text-align:center">yes</td><td style="text-align:center">no</td><td style="text-align:center">no</td><td style="text-align:center">no</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;引言：java中有四种访问修饰符，public，protected，defaul（实际上没有这个关键词（大概懂我意思吧），就是默认的同一包内访问权限。），private，用于对方法，属性，类的修饰，但是部分可用。&lt;/p&gt;
+&lt;p&gt;访问权限和使用类别见一下两个表格&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java笔记" scheme="http://yoursite.com/tags/java%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java内部类(非blog，Not recommended)(update ing)</title>
+    <link href="http://yoursite.com/2018/04/12/internalclass/"/>
+    <id>http://yoursite.com/2018/04/12/internalclass/</id>
+    <published>2018-04-12T08:18:22.896Z</published>
+    <updated>2018-04-12T08:56:06.263Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java笔记" scheme="http://yoursite.com/tags/java%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>easyMock的简单使用（详细见参考官方文档，第二问更新中）</title>
@@ -63,9 +133,9 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -92,9 +162,9 @@
       <category term="java" scheme="http://yoursite.com/categories/java/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
     
@@ -102,8 +172,8 @@
   
   <entry>
     <title>javaIO流的总结（更新中）</title>
-    <link href="http://yoursite.com/2018/04/07/javaIO-summary/"/>
-    <id>http://yoursite.com/2018/04/07/javaIO-summary/</id>
+    <link href="http://yoursite.com/2018/04/07/IO/javaIO-summary/"/>
+    <id>http://yoursite.com/2018/04/07/IO/javaIO-summary/</id>
     <published>2018-04-07T14:11:28.000Z</published>
     <updated>2018-04-07T06:22:38.744Z</updated>
     
