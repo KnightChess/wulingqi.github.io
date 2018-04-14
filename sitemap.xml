@@ -2,56 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/04/09/easyMock-simple-use/</loc>
+    <loc>http://yoursite.com/2018/03/22/WriteTest/</loc>
+    
+    <lastmod>2018-04-14T05:29:38.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/14/innernal-class/</loc>
+    
+    <lastmod>2018-04-14T04:30:14.522Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/09/mock/easyMock-simple-use/</loc>
     
     <lastmod>2018-04-14T01:01:51.745Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/12/internalclass/</loc>
-    
-    <lastmod>2018-04-12T08:56:06.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/12/abstract-class/</loc>
+    <loc>http://yoursite.com/2018/04/12/notes/abstract-class/</loc>
     
     <lastmod>2018-04-12T08:54:54.287Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/12/ppt/</loc>
+    <loc>http://yoursite.com/2018/04/12/notes/ppt/</loc>
     
     <lastmod>2018-04-12T08:54:40.575Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/05/auto-unpacking-packing/</loc>
+    <loc>http://yoursite.com/2018/04/05/essays/auto-unpacking-packing/</loc>
     
     <lastmod>2018-04-10T06:43:20.320Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/23/sixWayLoadProperties/</loc>
+    <loc>http://yoursite.com/2018/03/23/essays/sixWayLoadProperties/</loc>
     
     <lastmod>2018-04-10T06:36:26.548Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/09/dependencies-and-libraries/</loc>
+    <loc>http://yoursite.com/2018/04/09/idea/dependencies-and-libraries/</loc>
     
     <lastmod>2018-04-09T12:13:55.871Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/08/idea-webApp-simple/</loc>
+    <loc>http://yoursite.com/2018/04/08/idea/idea-webApp-simple/</loc>
     
     <lastmod>2018-04-09T12:03:15.858Z</lastmod>
     
@@ -65,23 +72,16 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/04/05/asListException/</loc>
+    <loc>http://yoursite.com/2018/04/05/essays/asListException/</loc>
     
     <lastmod>2018-04-05T07:01:37.834Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/03/25/pro-path/</loc>
+    <loc>http://yoursite.com/2018/03/25/essays/pro-path/</loc>
     
     <lastmod>2018-03-24T16:58:33.578Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/22/WriteTest/</loc>
-    
-    <lastmod>2018-03-24T02:19:54.331Z</lastmod>
     
   </url>
   
