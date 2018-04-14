@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/09/easyMock-simple-use/</loc>
+    
+    <lastmod>2018-04-14T01:01:51.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/12/internalclass/</loc>
     
     <lastmod>2018-04-12T08:56:06.263Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2018/04/12/ppt/</loc>
     
     <lastmod>2018-04-12T08:54:40.575Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/09/easyMock-simple-use/</loc>
-    
-    <lastmod>2018-04-10T06:56:18.452Z</lastmod>
     
   </url>
   
