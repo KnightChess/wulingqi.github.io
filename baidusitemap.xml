@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/14/innernal-class/</loc>
+    <lastmod>2018-04-15T13:01:31.714Z</lastmod>
+    <data>
+        <display>
+        <title>Effectivejava 内部类学习笔记（注意其中的jdk版本问题）</title>
+        <pubTime>2018-04-14T15:11:26.000Z</pubTime>
+        
+        <tag>Effective java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/15/Oracle/dense-rank/</loc>
     <lastmod>2018-04-15T12:08:24.846Z</lastmod>
     <data>
@@ -37,26 +57,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/14/innernal-class/</loc>
-    <lastmod>2018-04-15T04:23:50.256Z</lastmod>
-    <data>
-        <display>
-        <title>Effectivejava 内部类学习笔记（注意其中的jdk版本问题）</title>
-        <pubTime>2018-04-14T15:11:26.000Z</pubTime>
-        
-        <tag>Effective java</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
-          
         </display>
     </data>
     </url>
