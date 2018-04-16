@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/16/hexo-some-quesions/</loc>
+    <lastmod>2018-04-16T14:05:15.414Z</lastmod>
+    <data>
+        <display>
+        <title>hexo的Unable to create index.lock File exits问题</title>
+        <pubTime>2018-04-16T13:56:31.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="http://yoursite.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/16/DesignPatterns/observer/</loc>
     <lastmod>2018-04-16T13:50:52.348Z</lastmod>
     <data>
@@ -253,9 +273,9 @@
         
         <tag>随笔</tag>
          
-        <tag>applet</tag>
-         
         <tag>idea</tag>
+         
+        <tag>applet</tag>
          
          
            

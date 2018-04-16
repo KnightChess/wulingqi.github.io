@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-16T13:50:52.348Z</updated>
+  <updated>2018-04-16T14:05:15.414Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo的Unable to create index.lock File exits问题</title>
+    <link href="http://yoursite.com/2018/04/16/hexo-some-quesions/"/>
+    <id>http://yoursite.com/2018/04/16/hexo-some-quesions/</id>
+    <published>2018-04-16T13:56:31.000Z</published>
+    <updated>2018-04-16T14:05:15.414Z</updated>
+    
+    <content type="html"><![CDATA[<p>引言：今天写博客时忘记hexo g就push了，所以我就强制ctrl + c暂停push，后面再push 也就是hexo d时gg了，Error: fatal: Unable to create ‘D:/507/Blog/blog/.deploy_git/.git/index.lock’: File exists.</p><blockquote><p>ememem, 解决方法很简单，到指定的文件路径把这个锁文件删掉就行了，在hexo d文件的过程中，会产生临时文件index.lock锁文件来锁住相应的资源，push时在lock释放前不能使用相关资源，hexo在发布过程结束后会自动删除锁文件，但是如果我强制退出，此文件不会被删除，这时候手动删除此文件，重新hexo d就行了。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;引言：今天写博客时忘记hexo g就push了，所以我就强制ctrl + c暂停push，后面再push 也就是hexo d时gg了，Error: fatal: Unable to create ‘D:/507/Blog/blog/.deploy_git/.git/inde
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式之观察者模式</title>
@@ -251,9 +276,9 @@
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
-    
       <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+    
+      <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
     
   </entry>
   
