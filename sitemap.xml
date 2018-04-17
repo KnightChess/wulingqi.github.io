@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/14/notes/innernal-class/</loc>
+    
+    <lastmod>2018-04-17T11:34:22.922Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/15/vps-ss/</loc>
     
     <lastmod>2018-04-17T04:24:58.063Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2018/04/16/DesignPatterns/observer/</loc>
     
     <lastmod>2018-04-16T13:50:52.348Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/14/innernal-class/</loc>
-    
-    <lastmod>2018-04-15T13:01:31.714Z</lastmod>
     
   </url>
   
