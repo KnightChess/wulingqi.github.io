@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-16T14:57:40.161Z</updated>
+  <updated>2018-04-17T15:23:27.880Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(转)IntelliJ IDEA(Android Studio)中如何减少对c盘的占用(相关核心文件和目录介绍)</title>
+    <link href="http://yoursite.com/2018/04/17/idea/configuration-path/"/>
+    <id>http://yoursite.com/2018/04/17/idea/configuration-path/</id>
+    <published>2018-04-17T15:14:47.000Z</published>
+    <updated>2018-04-17T15:23:27.880Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>引言：博主无聊之余，偶然发现c盘竟然快满了，立志要清理文件，看到idea的配置竟然占了2个多G，然后就与下面的博主展开了无声的交流。</p></blockquote><p>原文：<a href="https://blog.csdn.net/qq_27093465/article/details/52385643" target="_blank" rel="noopener"> IntelliJ IDEA(Android Studio)中如何设置使得占用C盘空间尽量少(相关核心文件和目录介绍)</a></p><blockquote><p>这下好了，全家桶都能把配置路径挪出去了。（开心.jpg）</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;引言：博主无聊之余，偶然发现c盘竟然快满了，立志要清理文件，看到idea的配置竟然占了2个多G，然后就与下面的博主展开了无声的交流。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;原文：&lt;a href=&quot;https://blog.csdn.net/qq
+      
+    
+    </summary>
+    
+      <category term="idea" scheme="http://yoursite.com/categories/idea/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>人性的弱点之待人的基本技巧</title>
