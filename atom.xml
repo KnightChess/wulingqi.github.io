@@ -128,9 +128,9 @@
     <link href="http://yoursite.com/2018/04/15/vps-ss/"/>
     <id>http://yoursite.com/2018/04/15/vps-ss/</id>
     <published>2018-04-15T09:01:26.000Z</published>
-    <updated>2018-04-15T09:19:39.225Z</updated>
+    <updated>2018-04-17T04:24:58.063Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>购买和搭建ss看这个教程<a href="https://www.cnlinode.com/ban_wa_gong_mei_you_shadowsocks_xuan_xiang_le_zen_me_ban_san_zhong_fang_fa_da_jian_ss_jiao_cheng/" target="_blank" rel="noopener">搬瓦工没有shadowsocks选项了怎么办？三种方法搭建SS教程！</a>建议选择第三个</li><li>ss的详细配置看下面这个<br><a href="https://teddysun.com/342.html/comment-page-1" target="_blank" rel="noopener">Shadowsocks Python版一键安装脚本</a></li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 上面包含几条命令和路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./shadowsocks.sh unistall</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件路径</span></span><br><span class="line">/etc/shaowsocks-python/config.json</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">/etc/init.d/shadowsocks-python start</span><br><span class="line"><span class="comment">#停止</span></span><br><span class="line">/etc/init.d/shadowsocks-python stop</span><br><span class="line"><span class="comment">#重启</span></span><br><span class="line">/etc/init.d/shadowsocks-python status</span><br></pre></td></tr></table></figure><blockquote><p>注意：putty或git连接vps的密码是root password modification生成的复杂密码<br>git上 ssh -p 端口号 user@ip</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<ol><li>购买和搭建ss看这个教程<a href="https://www.cnlinode.com/ban_wa_gong_mei_you_shadowsocks_xuan_xiang_le_zen_me_ban_san_zhong_fang_fa_da_jian_ss_jiao_cheng/" target="_blank" rel="noopener">搬瓦工没有shadowsocks选项了怎么办？三种方法搭建SS教程！</a>建议选择第三个</li><li>ss的详细配置看下面这个<br><a href="https://teddysun.com/342.html/comment-page-1" target="_blank" rel="noopener">Shadowsocks Python版一键安装脚本</a></li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 上面包含几条命令和路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">./shadowsocks.sh unistall</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件路径</span></span><br><span class="line">/etc/shaowsocks-python/config.json</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动</span></span><br><span class="line">/etc/init.d/shadowsocks-python start</span><br><span class="line"><span class="comment">#停止</span></span><br><span class="line">/etc/init.d/shadowsocks-python stop</span><br><span class="line"><span class="comment">#状态</span></span><br><span class="line">/etc/init.d/shadowsocks-python status</span><br></pre></td></tr></table></figure><blockquote><p>注意：putty或git连接vps的密码是root password modification生成的复杂密码<br>git连接命令： ssh -p 端口号 user@ip</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -302,9 +302,9 @@
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
-    
       <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
+    
+      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
     
   </entry>
   
