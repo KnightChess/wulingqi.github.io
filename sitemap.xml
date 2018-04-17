@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/12/notes/abstract-class/</loc>
+    
+    <lastmod>2018-04-17T11:37:26.326Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/04/12/notes/ppt/</loc>
+    
+    <lastmod>2018-04-17T11:36:15.957Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/14/notes/innernal-class/</loc>
     
     <lastmod>2018-04-17T11:34:22.922Z</lastmod>
@@ -75,20 +89,6 @@
     <loc>http://yoursite.com/2018/04/09/mock/easyMock-simple-use/</loc>
     
     <lastmod>2018-04-14T01:01:51.745Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/12/notes/abstract-class/</loc>
-    
-    <lastmod>2018-04-12T08:54:54.287Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/12/notes/ppt/</loc>
-    
-    <lastmod>2018-04-12T08:54:40.575Z</lastmod>
     
   </url>
   
