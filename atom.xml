@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-18T07:12:45.582Z</updated>
+  <updated>2018-04-21T06:22:49.397Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Tesseract使用jTessBoxEditor进行简单样本训练</title>
+    <link href="http://yoursite.com/2018/04/21/python/pythonPhotoRescognition/"/>
+    <id>http://yoursite.com/2018/04/21/python/pythonPhotoRescognition/</id>
+    <published>2018-04-21T01:06:35.000Z</published>
+    <updated>2018-04-21T06:22:49.397Z</updated>
+    
+    <content type="html"><![CDATA[<p>前言：lz近来在搞数学建模，官方给了几个g的数据，lz dowload下来后发现三个文件夹，打开两个，excel表格数据，嗯，简单，可以，觉得我的任务差不多能解决了，嗯，第三个文件夹，懵逼.jpg，图片数据（天哪，你们不能统一点给数据格式么），无奈谷歌python的图像文字识别方面的功能，于是有了以下历程。</p><hr><h2 id="1-python包"><a href="#1-python包" class="headerlink" title="1. python包"></a>1. python包</h2><ul><li>pillow</li><li>pytesseract</li></ul><hr><h2 id="2-安装Tesseract"><a href="#2-安装Tesseract" class="headerlink" title="2. 安装Tesseract"></a>2. 安装Tesseract</h2><p>1.Windows<br>访问<a href="https://digi.bib.uni-mannheim.de/tesseract/" target="_blank" rel="noopener">下载地址</a>，在安装的过程中，会有提示的安装相应的语言包，如果没有可以自行去<a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">下载地址</a>，下载你想要的xxx.traineddata文件放到tessseract目录下的tessdata文件中</p><p>2.Linux（在下用的就是ArchLinux）（别问我为什么写两个，后面你就知道了）<br>不同版本的linux的仓库都有相应的tesseract，自行谷歌下载，同样，语言包和window下的地址一样，自行下载放到/usr/share/tessdata或者/usr/share/xxxx/tessdata目录下。</p><hr><h2 id="3-直接使用Tesseract的中文语言包"><a href="#3-直接使用Tesseract的中文语言包" class="headerlink" title="3. 直接使用Tesseract的中文语言包"></a>3. 直接使用Tesseract的中文语言包</h2><p>如果没有特别注释，window和linux一样<br>打开pycharm，写入以下代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">image = Image.open(<span class="string">'D:\\xxx\\PyWorkSpace\\data\\zzz.jpg'</span>)</span><br><span class="line"></span><br><span class="line">code = pytesseract.image_to_string(image, lang=<span class="string">'chi_sim'</span>)</span><br><span class="line"></span><br><span class="line">print(code)</span><br></pre></td></tr></table></figure></p><blockquote><p>额么么么。图片我就不粘贴了，准确率0，嗯。。。</p></blockquote><hr><h2 id="4-我们还是来训练样本吧"><a href="#4-我们还是来训练样本吧" class="headerlink" title="4. 我们还是来训练样本吧"></a>4. 我们还是来训练样本吧</h2><p>前言：先将所需要的图片转换成tif格式，然后使用<a href="https://sourceforge.net/projects/vietocr/files/jTessBoxEditor/" target="_blank" rel="noopener">jTessBoxEditor</a>工具（需要再java jre下再能运行）合并这几张图片。tools-&gt;Merge tiff<br>。</p><blockquote><p>注意：图片合并后的格式：[langname].[fontname].exp[num]，langname是定义语言的名称，fontname是定义的字体名称，后面都会用到。</p></blockquote><hr><h3 id="4-1-tesseract识别，生成box文件"><a href="#4-1-tesseract识别，生成box文件" class="headerlink" title="4.1 tesseract识别，生成box文件"></a>4.1 tesseract识别，生成box文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract chi.font.exp0.tif chi.font.exp0 -l chi_sim batch.nochop makebox</span><br></pre></td></tr></table></figure><blockquote><p>注意：这里的chi_sim是中文语言包，使用时为了提高识别率，如果tessdata中没有可以去掉-l chi_sim，就会默认eng的语言包，也得保证tessdata下有eng.traineddata文件。</p></blockquote><hr><h3 id="4-2-使用jTessBoxEditor"><a href="#4-2-使用jTessBoxEditor" class="headerlink" title="4.2 使用jTessBoxEditor"></a>4.2 使用jTessBoxEditor</h3><p>通过open打开对应的tif文件，会自动打开对应的box文件。</p><ol><li>在box Coordinate修改错误的内容</li><li>box view可以查看</li><li>修改完后记得save，save，save</li></ol><hr><h3 id="4-3-trainning"><a href="#4-3-trainning" class="headerlink" title="4.3 trainning"></a>4.3 trainning</h3><p>使用box文件生成.tr文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract chi.font.exp0.tif chi.font.exp0 -l chi_sim nobatch box.train</span><br></pre></td></tr></table></figure><hr><h3 id="4-4-character-set"><a href="#4-4-character-set" class="headerlink" title="4.4 character set"></a>4.4 character set</h3><p>到上面windown下都没什么问题，到这就有问题了，生成unicharset文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unicharset_extractor chi.font.exp0.box</span><br></pre></td></tr></table></figure></p><blockquote><p>window下提示我U_FILE_ACCESS_ERROR的问题，给出的解释是：The requested file cannot be foud.lz弄了一下午也不清楚是什么问题，就放弃了，转到了archlinux重新搞一遍，这边就过了。如果有什么解决方法，<code>求告知</code>。</p></blockquote><hr><h3 id="4-5-font-properties"><a href="#4-5-font-properties" class="headerlink" title="4.5 font_properties"></a>4.5 font_properties</h3><p>定义字体特征文件，创建一个名称为 font_properties 的字体特征文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window:</span><br><span class="line"><span class="built_in">echo</span> font 0 0 0 0 0 &gt;font_properties</span><br><span class="line"></span><br><span class="line">linux:</span><br><span class="line">vim font_properties</span><br><span class="line">font 0 0 0 0 0</span><br></pre></td></tr></table></figure></p><blockquote><p>这里的font就是之前的fontname</p></blockquote><hr><h2 id="5-Clustering"><a href="#5-Clustering" class="headerlink" title="5. Clustering"></a>5. Clustering</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">shapeclustering -F font_properties -U unicharset chi.font.exp0.tr</span><br><span class="line"></span><br><span class="line">mftraining -F font_properties -U unicharset -O chi.unicharset chi.font.exp0.tr</span><br><span class="line"></span><br><span class="line">cntraining chi.font.exp0.tr</span><br></pre></td></tr></table></figure><ul><li>修改生成的4个文件（inttemp、pffmtable、normproto、shapetable）名称为[langname].xxx，比如：chi.inttemp、chi.pffmtable、chi.normproto、chi.shapetable。</li></ul><blockquote><p>注意：这里的mftraining可能会遇到存储空间的问题，详见<a href="https://groups.google.com/forum/#!msg/tesseract-ocr/eQ6HQdVE7Cw/3o1XPn2Q0CkJ" target="_blank" rel="noopener">Google 论坛</a></p></blockquote><hr><h3 id="5-1-生成-traineddata-语言文件"><a href="#5-1-生成-traineddata-语言文件" class="headerlink" title="5.1 生成.traineddata 语言文件"></a>5.1 生成.traineddata 语言文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">combine_tessdata chi.</span><br></pre></td></tr></table></figure><blockquote><p>最后将chi.traineddata文件拷贝到tessdata目录下就可以了</p></blockquote><hr><h2 id="6-使用chi-traineddata"><a href="#6-使用chi-traineddata" class="headerlink" title="6. 使用chi.traineddata"></a>6. 使用chi.traineddata</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line">image = Image.open(<span class="string">'D:\\507\\PyWorkSpace\\data\\zzz.jpg'</span>)</span><br><span class="line"></span><br><span class="line">code = pytesseract.image_to_string(image, lang=<span class="string">'chi'</span>)</span><br><span class="line"></span><br><span class="line">print(code)</span><br></pre></td></tr></table></figure><blockquote><p>数字准确率100%，但是中文还是不行，有待提高。</p></blockquote><hr><p>参考：<br><a href="http://xiaosheng.me/2015/12/18/article11/" target="_blank" rel="noopener">Tesseract训练</a><br><a href="https://blog.csdn.net/firehood_/article/details/8433077" target="_blank" rel="noopener">Tesseract-OCR 字符识别—样本训练</a></p><hr><h2 id="7-资源链接："><a href="#7-资源链接：" class="headerlink" title="7. 资源链接："></a>7. 资源链接：</h2><p><a href="https://digi.bib.uni-mannheim.de/tesseract/" target="_blank" rel="noopener">window Tesseract</a><br><a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">语言包</a><br><a href="https://sourceforge.net/projects/vietocr/files/jTessBoxEditor/" target="_blank" rel="noopener">jTessBoxEditor</a><br><a href="https://github.com/tesseract-ocr/" target="_blank" rel="noopener">tesseract-ocr</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前言：lz近来在搞数学建模，官方给了几个g的数据，lz dowload下来后发现三个文件夹，打开两个，excel表格数据，嗯，简单，可以，觉得我的任务差不多能解决了，嗯，第三个文件夹，懵逼.jpg，图片数据（天哪，你们不能统一点给数据格式么），无奈谷歌python的图像文字
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="tesseract" scheme="http://yoursite.com/tags/tesseract/"/>
+    
+      <category term="图像识别" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>人性弱点之使人喜欢你的六种方法</title>
     <link href="http://yoursite.com/2018/04/18/Literature/human-weakness-two/"/>
     <id>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</id>
     <published>2018-04-18T06:39:44.000Z</published>
-    <updated>2018-04-18T07:12:45.582Z</updated>
+    <updated>2018-04-21T04:13:29.436Z</updated>
     
-    <content type="html"><![CDATA[<p>引言：这里没有读后感，也没有具体内容，只是记录一些觉得令我觉得不错的语句</p><h2 id="如果这样做，你将到处受欢迎"><a href="#如果这样做，你将到处受欢迎" class="headerlink" title="如果这样做，你将到处受欢迎"></a>如果这样做，你将到处受欢迎</h2><ul><li>如果我们只是想使人注意，使人对我们发生兴趣，我们永远不会有很多真诚的朋友···朋友，真正的朋友，不是那样造成的。</li><li>一个不关心别人，对别人不感兴趣的人，他的生活必遭受重大的阻碍，困难，同时会给别人带来极大的损害，困扰。所有人类的失败，都是由于这些人才发生的。 –<code>阿得洛（著作：生活对你的意义）</code></li><li>假如我们相交朋友，应该先出来替别人做些事 – 需要时间、精力、公义、体恤的事。</li></ul><blockquote><p>来个小插曲：你来回答一个问题，如何优雅地询问别人的生日？（答案末尾哦（有点短，不要偷偷看后面好嘛），可能有更好的也说不定，请务必教我）</p></blockquote><ul><li>要别人对我们发生兴趣时，我们先要对别人发生兴趣。 –<code>西罗斯（罗马诗人）</code></li></ul><blockquote><p>真诚的对别人发生兴趣</p></blockquote><hr><blockquote><p>来自书里的解决方法： 我见了朋友，就问他们是否相信人的生日跟每个人的性格，个性有关？然后我请他告诉我他的出生年月日（然后<del>偷偷</del>悄悄记上，嘿嘿。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>引言：这里没有读后感，也没有具体内容，只是记录一些觉得令我觉得不错的语句</p><h2 id="如果这样做，你将到处受欢迎"><a href="#如果这样做，你将到处受欢迎" class="headerlink" title="如果这样做，你将到处受欢迎"></a>如果这样做，你将到处受欢迎</h2><ul><li>如果我们只是想使人注意，使人对我们发生兴趣，我们永远不会有很多真诚的朋友···朋友，真正的朋友，不是那样造成的。</li><li>一个不关心别人，对别人不感兴趣的人，他的生活必遭受重大的阻碍，困难，同时会给别人带来极大的损害，困扰。所有人类的失败，都是由于这些人才发生的。 –<code>阿得洛（著作：生活对你的意义）</code></li><li>假如我们相交朋友，应该先出来替别人做些事 – 需要时间、精力、公义、体恤的事。</li></ul><blockquote><p>来个小插曲：你来回答一个问题，如何优雅地询问别人的生日？（答案末尾哦（有点短，不要偷偷看后面好嘛），可能有更好的也说不定，请务必教我）</p></blockquote><ul><li>要别人对我们发生兴趣时，我们先要对别人发生兴趣。 –<code>西罗斯（罗马诗人）</code></li></ul><blockquote><p>真诚的对别人发生兴趣</p></blockquote><hr><blockquote><p>来自书里的解决方法： 我见了朋友，就问他们是否相信人的生日跟每个人的性格，个性有关？然后我请他告诉我他的出生年月日（然后<del>偷偷</del>悄悄记上，嘿嘿。）</p></blockquote><h2 id="如何给人好印象"><a href="#如何给人好印象" class="headerlink" title="如何给人好印象"></a>如何给人好印象</h2><ul><li>如果你希望别人用一副高兴、欢愉的神情来接待你，那么你自己先要用这样的神情去对待别人。</li><li>行动该是追随着一个人自己的感受。。。。可是事实上，行动和感受，是并道而驰的。所以，你需要快乐时，可以强迫自己快乐起来。</li><li>人们都想知道要如何寻求快乐，这里有一条途径，或许可以把你带去快乐的境界。那就是让自己知道，快乐是出自自己内在的心情，不需要向外界寻求的。</li><li>大多数人所获得的快乐，跟他意念所想到的相差不多。 – <code>林肯</code></li><li>你要时时把自己想象作怀有才干，待人诚恳，有益于社会的一个有用的人。你有了这种想法后，会时时刻刻的改变你自己，使你的人格渐渐变成这种典型。你必需知道，一个人的思维力，能形成一股极大的力量。</li><li>保持一种正确的心理状态——勇敢、诚实，和乐观。正确的思想，能启发创造力。所以有很多的事情，都是由理想、欲望而来的。凡你真诚的祈求，都会获得完全的应验。我们想要获得什么成就，只要把这种意念孕育在我们心里，我们就会有这样的收获！放松你凝重的脸色，抬起头，我们就是明天的主宰。</li></ul>]]></content>
     
     <summary type="html">
     
@@ -518,27 +545,6 @@
     
     
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/03/22/hello-world/"/>
-    <id>http://yoursite.com/2018/03/22/hello-world/</id>
-    <published>2018-03-22T09:34:27.055Z</published>
-    <updated>2018-03-22T09:34:27.056Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
