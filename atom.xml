@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-21T10:18:36.716Z</updated>
+  <updated>2018-04-22T06:26:38.009Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux软链接和硬链接的区别</title>
+    <link href="http://yoursite.com/2018/04/22/Linux/linux-ln/"/>
+    <id>http://yoursite.com/2018/04/22/Linux/linux-ln/</id>
+    <published>2018-04-22T04:26:22.000Z</published>
+    <updated>2018-04-22T06:26:38.009Z</updated>
+    
+    <content type="html"><![CDATA[<p>引言：这里bz当读者都知道这两个链接的用法了，那么进入正题吧。</p><hr><h2 id="1-硬链接"><a href="#1-硬链接" class="headerlink" title="1. 硬链接"></a>1. 硬链接</h2><blockquote><p>套一下别人的概念吧：由于linux下的文件是通过索引节点（Inode）来识别文件，硬链接可以认为是一个指针，指向文件索引节点的指针，系统并不为它重新分配inode。每添加一个一个硬链接，文件的链接数就加1。<br>不足：尽管硬链接节省空间，也是Linux系统整合文件系统的传统方式，但是存在一下不足之处：（1）不可以在不同文件系统的文件间建立链接（2）只有超级用户才可以为目录创建硬链接。</p></blockquote><hr><h2 id="2-软链接"><a href="#2-软链接" class="headerlink" title="2. 软链接"></a>2. 软链接</h2><blockquote><p>同理：软链接克服了硬链接的不足，没有任何文件系统的限制，任何用户可以创建指向目录的符号链接。因而现在更为广泛使用，它具有更大的灵活性，甚至可以跨越不同机器、不同网络对文件进行链接。<br>缺点：因为链接文件包含有原文件的路径信息，所以当原文件从一个目录下移到其他目录中，再访问链接文件，系统就找不到了，而硬链接就没有这个缺陷，你想怎么移就怎么移；还有它要系统分配额外的空间用于建立新的索引节点和保存原文件的路径。</p></blockquote><hr><h2 id="3-通过例子来看看一些问题吧"><a href="#3-通过例子来看看一些问题吧" class="headerlink" title="3. 通过例子来看看一些问题吧"></a>3. 通过例子来看看一些问题吧</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 创建test文件夹，用来保存我们将要链接的文件</span></span><br><span class="line">mkdir test</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建要用来测试软链接的soft文件，并写入内容soft</span></span><br><span class="line">vim test/soft</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建要用来测试硬链接的hard文件，并写入内容hard</span></span><br><span class="line">vim test/hard</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为soft创建软链接</span></span><br><span class="line">ln -s test/soft test.soft</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为hard创建硬链接</span></span><br><span class="line">ln test/hard test.hard</span><br><span class="line"></span><br><span class="line"><span class="comment">// 试试通过软链接修改内容，在内容后加上.link</span></span><br><span class="line">vim test.soft</span><br><span class="line">vim test.hard</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查看test目录下的内容都发生了改变，那么，我们来研究下两者连接的原理</span></span><br><span class="line"><span class="comment">// 分别删除test目录下的soft和hard文件</span></span><br><span class="line">rm -rf test/soft</span><br><span class="line">rm -rf test/hard</span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后通过各自的软硬链接访问下，发现硬链接还是能访问到，</span></span><br><span class="line"><span class="comment">// 而软链接gg了，找不到文件，这就是他们的区别之一</span></span><br></pre></td></tr></table></figure><blockquote><p>软链接就像window下的快捷方式，把原文件删除了，就gg了，而硬链接怎么比喻呢，似乎不好比喻那么就详细解释吧。</p></blockquote><hr><h2 id="研究研究"><a href="#研究研究" class="headerlink" title="研究研究"></a>研究研究</h2><p>前言：建议了解下inode以及linux下的文件管理方式</p><p>使用命令stat查看下test两个文件和两个链接文件的属性，并且提取了部分信息：</p><table><thead><tr><th style="text-align:center">文件名(路径)</th><th style="text-align:center">inode</th><th style="text-align:center">Links(链接数)</th></tr></thead><tbody><tr><td style="text-align:center">test/soft</td><td style="text-align:center">920416</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">test.soft</td><td style="text-align:center">920415</td><td style="text-align:center">1</td></tr><tr><td style="text-align:center">test/hard</td><td style="text-align:center">920149</td><td style="text-align:center">2</td></tr><tr><td style="text-align:center">test.hard</td><td style="text-align:center">920149</td><td style="text-align:center">2</td></tr></tbody></table><blockquote><p>查找文件分三个步骤：先是通过文件名找到对应的inode； 再通过inode获取相关的文件信息；最后根据inode信息找到文件所在的block。<br>也就是说，这里的目录名只是类似对用户友善的标识，linux系统其实是通过inode来区分文件信息的。<br>看表格，软链接创建后系统为test.soft分配了一个inode，这个inode信息指向test下的soft的文件名，而硬链接系统并没有再分配别的inode，而是使用同一个inode信息，可能后台维护一个表吧，了解不深，不清楚。<br>通过链接数可以看出，保存信息的inode被几个文件名所指向，其中硬链接使不同的用户名指向同一个inode信息，而在linux中，如果inode的连接数不为零，系统救不会回收这个inode号码和block区域。所以，这也就能解释为什么删除一个硬链接的文件名，所对应的文件信息还能找到，而软链接就找不到了。因为软链接中的test.soft 依赖 test文件下的soft的node信息，也就是依赖。</p></blockquote><hr><p>详细的inode解释，比较好懂的可以看阮一峰老师的<a href="http://www.ruanyifeng.com/blog/2011/12/inode.html" target="_blank" rel="noopener">理解inode</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;引言：这里bz当读者都知道这两个链接的用法了，那么进入正题吧。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;1-硬链接&quot;&gt;&lt;a href=&quot;#1-硬链接&quot; class=&quot;headerlink&quot; title=&quot;1. 硬链接&quot;&gt;&lt;/a&gt;1. 硬链接&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Tesseract使用jTessBoxEditor进行简单样本训练</title>
@@ -384,9 +410,9 @@
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
-    
       <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+    
+      <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
     
   </entry>
   
@@ -520,31 +546,6 @@
     
     
       <category term="配置文件" scheme="http://yoursite.com/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HexoMarkdown</title>
-    <link href="http://yoursite.com/2018/03/22/WriteTest/"/>
-    <id>http://yoursite.com/2018/03/22/WriteTest/</id>
-    <published>2018-03-22T15:17:08.000Z</published>
-    <updated>2018-04-14T05:29:38.119Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="引言：HexoMd-的语法，基本够用，欢迎补充-能用得到的-与修正，部分细节有待修改（基于主题BlueLake"><a href="#引言：HexoMd-的语法，基本够用，欢迎补充-能用得到的-与修正，部分细节有待修改（基于主题BlueLake" class="headerlink" title="引言：HexoMd 的语法，基本够用，欢迎补充(能用得到的)与修正，部分细节有待修改（基于主题BlueLake)"></a>引言：HexoMd 的语法，基本够用，欢迎补充(能用得到的)与修正，部分细节有待修改（基于主题BlueLake)</h2><p>Markdown 语法版本很多，不同地方部分语法不相兼容，导致网上部分语法不能再hexo上使用，以下是整理的能在hexo的部分语法。</p><hr><h2 id="1-Tab"><a href="#1-Tab" class="headerlink" title="1.Tab"></a>1.Tab</h2><pre><code>字前tab会加灰框</code></pre><h2 id="2-的用法"><a href="#2-的用法" class="headerlink" title="2.#的用法"></a>2.#的用法</h2><pre><code>用来表示几级标题# frist title## second title### third title</code></pre><h2 id="3-超链接"><a href="#3-超链接" class="headerlink" title="3.超链接"></a>3.超链接</h2><h3 id="3-1显示链接的图片"><a href="#3-1显示链接的图片" class="headerlink" title="3.1显示链接的图片"></a>3.1显示链接的图片</h3><pre><code>![name](url) 显示链接的图片![this is page](/images/keduoli.jpg)</code></pre><p>link:<br><img src="/images/keduoli.jpg" alt="this is page"></p><h3 id="3-2文字超链接"><a href="#3-2文字超链接" class="headerlink" title="3.2文字超链接"></a>3.2文字超链接</h3><pre><code>[name](url) 文字超链接[bilibili](https://www.bilibili.com/)</code></pre><p><a href="https://www.bilibili.com/" target="_blank" rel="noopener">bilibili</a></p><h3 id="3-3图片超链接"><a href="#3-3图片超链接" class="headerlink" title="3.3图片超链接"></a>3.3图片超链接</h3><pre><code>[![xxx](图片url)][要转移到的链接]图片超链接[![enene](/images/keduoli.jpg)](https://nodesource.com/products/nsolid)</code></pre><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="/images/keduoli.jpg" alt="enene"></a></p><h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4.列表"></a>4.列表</h2><h3 id="4-1-1无序列表-，-，-，-两格缩进，列表与前一行的"><a href="#4-1-1无序列表-，-，-，-两格缩进，列表与前一行的" class="headerlink" title="4.1.1无序列表 -，*，+， 两格缩进，列表与前一行的"></a>4.1.1无序列表 -，*，+， 两格缩进，列表与前一行的</h3><pre><code>hello:      - one      - two      - three</code></pre><p>eg:</p><p>hello (没有衔接一起很神奇）（衔接的意思是hello和one之间分开了，相当于多了一行空行</p><ul><li>one</li><li>two</li><li>three</li></ul><p>不同行两格缩进看看效果：</p><p>food</p><ul><li>bread<ul><li>apple<ul><li>pig<ul><li>ddd<ul><li>mmm</li></ul></li></ul></li></ul></li></ul></li></ul><h3 id="4-1-2两格缩进-（衔接在一起了，就是上下文紧靠）"><a href="#4-1-2两格缩进-（衔接在一起了，就是上下文紧靠）" class="headerlink" title="4.1.2两格缩进  （衔接在一起了，就是上下文紧靠）"></a>4.1.2两格缩进  （衔接在一起了，就是上下文紧靠）</h3><ol><li>登录微博开放平台，选择。</li><li>为了与注意风格统一，如下配置</li><li>嗯嗯嗯          （也衔接一起了）</li></ol><ul><li>基础设置： dsfs<ul><li>样式设置： sdfa</li><li>模块设置： dsfa</li></ul></li></ul><hr><h3 id="4-2有序列表-序号-xxx-注意有空格）"><a href="#4-2有序列表-序号-xxx-注意有空格）" class="headerlink" title="4.2有序列表 序号. xxx(注意有空格）"></a>4.2有序列表 序号. xxx(注意有空格）</h3><ol><li>登录微博开放平台，选择。</li><li>为了与注意风格统一，如下配置</li><li>嗯嗯嗯 </li></ol><h2 id="5-用键代替链接，键值对匹配（连接在附录）"><a href="#5-用键代替链接，键值对匹配（连接在附录）" class="headerlink" title="5.用键代替链接，键值对匹配（连接在附录）"></a>5.用键代替链接，键值对匹配（连接在附录）</h2><pre><code>关键字对上跳转的意思吧，[内容]和文章最后的[内容1](链接)对上可以变成超链接，前后内容忽略大小写，也能匹配。这里注意最后一个，如果最后几个字也要跳转，单单加[1]没用得再加[2]来达到目的，此时内容为1，但是跳转到的目的为2Markdown is a lightweight markup language based on theformatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site]</code></pre><p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.As <a href="http://daringfireball.net" target="_blank" rel="noopener">John Gruber</a> writes on the <a href="https://github.com/joemccann/dillinger" target="_blank" rel="noopener">Markdown site</a></p><h2 id="6-可以用来注意，引用-可以多层"><a href="#6-可以用来注意，引用-可以多层" class="headerlink" title="6.可以用来注意，引用,可以多层"></a>6.可以用来注意，引用,可以多层</h2><pre><code>&gt; The overriding design goal for Markdown&apos;s&gt;&gt; formatting syntax is to make it as readable&gt; as possible. The idea is that.</code></pre><p>eg:</p><blockquote><p>The overriding design goal for Markdown’s</p><blockquote><p>formatting syntax is to make it as readable<br>as possible. The idea is that.</p></blockquote></blockquote><h2 id="7-代码块"><a href="#7-代码块" class="headerlink" title="7.代码块"></a>7.代码块</h2><p><img src="/images/hexo.png" alt=""></p><p>eg:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> dillinger</span><br><span class="line">$ npm install -d</span><br><span class="line">$ node app</span><br></pre></td></tr></table></figure></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"I think it's good"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h2><pre><code>制表第一行和第二行列必须对应数量相等（注意，冒号和杠之间有空格）| Plugin | README | sdflj || ------ | ：------： | -----： |  右对齐，居中，左对齐| Dropbox | [plugins/dropbox/README.md][PlDb] | dsf || Github | [plugins/github/README.md][PlGh] | sdf || Google Drive | [plugins/googledrive/README.md][PlGd] | dsfs || OneDrive | [plugins/onedrive/README.md][PlOd] | dsfj || Medium | [plugins/medium/README.md][PlMe] || Google Analytics | [plugins/googleanalytics/README.md][PlGa] |</code></pre><p>eg:</p><table><thead><tr><th>Plugin</th><th>README</th><th>sdflj</th></tr></thead><tbody><tr><td>Dropbox</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md" target="_blank" rel="noopener">plugins/dropbox/README.md</a></td><td>dsf</td></tr><tr><td>Github</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md" target="_blank" rel="noopener">plugins/github/README.md</a></td><td>sdf</td></tr><tr><td>Google Drive</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md" target="_blank" rel="noopener">plugins/googledrive/README.md</a></td><td>dsfs</td></tr><tr><td>OneDrive</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md" target="_blank" rel="noopener">plugins/onedrive/README.md</a></td><td>dsfj</td></tr><tr><td>Medium</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md" target="_blank" rel="noopener">plugins/medium/README.md</a></td><td>df</td></tr><tr><td>Google Analytics</td><td><a href="https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md" target="_blank" rel="noopener">plugins/googleanalytics/README.md</a></td><td>dsdg</td></tr></tbody></table><p>eg：<br>This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out <code>${package.json.version}</code> with the actual version of Dillinger.</p><h2 id="9-文字"><a href="#9-文字" class="headerlink" title="9.文字"></a>9.文字</h2><h3 id="9-1文字背景"><a href="#9-1文字背景" class="headerlink" title="9.1文字背景"></a>9.1文字背景</h3><pre><code>`xxx` 背景颜色加灰I love `you` red line</code></pre><p>eg:<br>I love <code>you</code> red line</p><h3 id="9-2文字加粗"><a href="#9-2文字加粗" class="headerlink" title="9.2文字加粗"></a>9.2文字加粗</h3><pre><code>加粗 **Software**</code></pre><p>Free <strong>Software</strong>, Hell Yeah!</p><h3 id="9-3删除线"><a href="#9-3删除线" class="headerlink" title="9.3删除线"></a>9.3删除线</h3><pre><code>~~xxx~~</code></pre><p>我喜欢<del>java</del>python</p><h2 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h2><pre><code>附录：[dill]: &lt;https://github.com/joemccann/dillinger&gt;[git-repo-url]: &lt;https://github.com/joemccann/dillinger.git&gt;[john gruber]: &lt;http://daringfireball.net&gt;[df1]: &lt;http://daringfireball.net/projects/markdown/&gt;[PlMe]: &lt;https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md&gt;[PlGa]: &lt;https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md&gt;</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;引言：HexoMd-的语法，基本够用，欢迎补充-能用得到的-与修正，部分细节有待修改（基于主题BlueLake&quot;&gt;&lt;a href=&quot;#引言：HexoMd-的语法，基本够用，欢迎补充-能用得到的-与修正，部分细节有待修改（基于主题BlueLake&quot; class=&quot;h
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
-    
-    
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   
