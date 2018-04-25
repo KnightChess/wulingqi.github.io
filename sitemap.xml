@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/24/dynamic-programming/</loc>
+    
+    <lastmod>2018-04-25T05:53:52.376Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/14/notes/innernal-class/</loc>
     
     <lastmod>2018-04-22T12:39:11.190Z</lastmod>
