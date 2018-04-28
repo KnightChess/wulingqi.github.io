@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</loc>
+    
+    <lastmod>2018-04-28T11:27:18.923Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/04/24/dynamic-programming/</loc>
     
     <lastmod>2018-04-25T05:53:52.376Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/2018/04/21/python/pythonPhotoRescognition/</loc>
     
     <lastmod>2018-04-21T10:18:36.716Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</loc>
-    
-    <lastmod>2018-04-21T04:13:29.436Z</lastmod>
     
   </url>
   

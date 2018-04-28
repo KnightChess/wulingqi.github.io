@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</loc>
+    <lastmod>2018-04-28T11:27:18.923Z</lastmod>
+    <data>
+        <display>
+        <title>人性弱点之使人喜欢你的六种方法</title>
+        <pubTime>2018-04-18T06:39:44.000Z</pubTime>
+        
+        <tag>卡耐基</tag>
+         
+         
+           
+             
+              <breadCrumb title="文学范" url="http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/04/24/dynamic-programming/</loc>
     <lastmod>2018-04-25T05:53:52.376Z</lastmod>
     <data>
@@ -75,26 +95,6 @@
            
              
               <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</loc>
-    <lastmod>2018-04-21T04:13:29.436Z</lastmod>
-    <data>
-        <display>
-        <title>人性弱点之使人喜欢你的六种方法</title>
-        <pubTime>2018-04-18T06:39:44.000Z</pubTime>
-        
-        <tag>卡耐基</tag>
-         
-         
-           
-             
-              <breadCrumb title="文学范" url="http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
           
         </display>
     </data>
