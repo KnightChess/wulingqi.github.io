@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-25T05:53:52.376Z</updated>
+  <updated>2018-05-10T08:40:51.747Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给Word文档加页码</title>
+    <link href="http://yoursite.com/2018/05/10/word/word-page-number/"/>
+    <id>http://yoursite.com/2018/05/10/word/word-page-number/</id>
+    <published>2018-05-10T07:56:02.000Z</published>
+    <updated>2018-05-10T08:40:51.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>引言：呀，今天被人拜托了个word文档加页码，从任意第几页开始加页码，我其实也是不会的，然后谷歌了，文字讲的很不通俗啊，然后不知为什么莫名对B站（这里不是广告）有点信任，就上B站搜了相关视屏，然后还真的给我找到了，好了，废话不多说，加页码。</p><hr><h2 id="1-正常的步骤："><a href="#1-正常的步骤：" class="headerlink" title="1. 正常的步骤："></a>1. 正常的步骤：</h2><hr><p>1.</p><blockquote><p>点击<code>插入</code>，点击<code>页眉</code>，点击<code>编辑页眉</code></p></blockquote><p><a href="/images/word/page-number-one.png"><img src="/images/word/page-number-one.png" alt=""></a></p><p>2.</p><blockquote><p>点击<code>上页眉</code>的位置，然后点击<code>链接到前一条页眉</code></p></blockquote><p><a href="/images/word/page-number-two.png"><img src="/images/word/page-number-two.png" alt=""></a></p><p>3.</p><blockquote><p>点击<code>下页眉</code>的位置，然后点击<code>链接到前一条页眉</code>，可能会有提示删除页眉，点击<code>确定</code>，<code>关闭页眉</code></p></blockquote><p><a href="/images/word/page-number-three.png"><img src="/images/word/page-number-three.png" alt=""></a></p><p>4.</p><blockquote><p>点击<code>插入</code>，点击<code>页码</code>，点击<code>设置页码格式</code></p></blockquote><p><a href="/images/word/page-number-four.png"><img src="/images/word/page-number-four.png" alt=""></a><br><a href="/images/word/page-number-five.png"><img src="/images/word/page-number-five.png" alt=""></a></p><p>5.</p><blockquote><p>点击<code>页码</code>，点击<code>页码低端格式</code>，选择一个你喜欢的，然后·关闭页眉·，结束</p></blockquote><p><a href="/images/word/page-number-six.png"><img src="/images/word/page-number-six.png" alt=""></a></p><hr><h2 id="2-不正常的步骤，其实也正常"><a href="#2-不正常的步骤，其实也正常" class="headerlink" title="2. 不正常的步骤，其实也正常"></a>2. 不正常的步骤，其实也正常</h2><blockquote><p>有的文档页眉已经链接完成，直接从正常的步<code>第4步</code>，如果<code>第4步</code>设置好了也可以直接从<code>第5步</code>开始。</p></blockquote><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://www.bilibili.com/video/av18210559?from=search&amp;seid=14187288009735054722" target="_blank" rel="noopener">ppt技巧系列视频3：Word如何从任意页开始插入页码</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;引言：呀，今天被人拜托了个word文档加页码，从任意第几页开始加页码，我其实也是不会的，然后谷歌了，文字讲的很不通俗啊，然后不知为什么莫名对B站（这里不是广告）有点信任，就上B站搜了相关视屏，然后还真的给我找到了，好了，废话不多说，加页码。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=
+      
+    
+    </summary>
+    
+      <category term="Office" scheme="http://yoursite.com/categories/Office/"/>
+    
+    
+      <category term="Word" scheme="http://yoursite.com/tags/Word/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划入门 Dynamic Programming</title>
@@ -517,35 +544,6 @@
     
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>getResourceAsStream和getSystemResourceAsStream等获取配置文件的路径表示</title>
-    <link href="http://yoursite.com/2018/03/25/essays/pro-path/"/>
-    <id>http://yoursite.com/2018/03/25/essays/pro-path/</id>
-    <published>2018-03-24T16:16:26.000Z</published>
-    <updated>2018-03-24T16:58:33.578Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/properties.png" alt="我的项目包结构"></p><blockquote><p>解释下：包名下都有对应一样的配置文件名，方便确定配置文件的位置，测试类也一样，应该能马上看得出</p></blockquote><h2 id="1-相对路径"><a href="#1-相对路径" class="headerlink" title="1.相对路径"></a>1.相对路径</h2><p>根据我前面proper的几种读取方式中，只有<code>ClassName.class.getResourceAsStream</code>使用的才是相对路径。</p><table><thead><tr><th style="text-align:center">配置文件.properties</th><th style="text-align:right">path</th></tr></thead><tbody><tr><td style="text-align:center">kkk</td><td style="text-align:right">kkk/kkk.properties</td></tr><tr><td style="text-align:center">zzz</td><td style="text-align:right"><code>../../zzz/zzz.properties</code></td></tr><tr><td style="text-align:center">src</td><td style="text-align:right"><code>../../src.properties</code></td></tr></tbody></table><pre><code>1. kkk文件在与TestProperUtil同目录下的目录kkk下所以是kkk/文件2. zzz 文件是在Testxxx上上级也就是src目录下的zzz目录中，其中..是上一级目录的意思3. src是上上级目录下的文件</code></pre><hr><h2 id="2-src下的绝对路径，不包括src的使用方式有三种："><a href="#2-src下的绝对路径，不包括src的使用方式有三种：" class="headerlink" title="2. src下的绝对路径，不包括src的使用方式有三种："></a>2. src下的绝对路径，不包括src的使用方式有三种：</h2><ol><li><code>ClassLoadergetSystemResourceAsStream</code></li><li><code>ClassName.class.getClassLoader().getResourceAsStream</code></li><li><code>ResourceBundle.getBundle</code><blockquote><p>注意：getBundle那个路径文件不加后缀名</p></blockquote></li></ol><table><thead><tr><th style="text-align:center">配置文件.properties</th><th style="text-align:right">path</th></tr></thead><tbody><tr><td style="text-align:center">kkk</td><td style="text-align:right">properties/test/kkk/kkk.properties</td></tr><tr><td style="text-align:center">zzz</td><td style="text-align:right">zzz/zzz.properties</td></tr><tr><td style="text-align:center">prop</td><td style="text-align:right">properties/prop.properties</td></tr></tbody></table><pre><code>1. kkk在src目录下的properties中的test目录的kkk目录下，所以path是properties/test/kkk/kkk.properties2. zzz 同理</code></pre><h2 id="3-关于boot配置文件"><a href="#3-关于boot配置文件" class="headerlink" title="3.关于boot配置文件"></a>3.关于boot配置文件</h2><p>不知道怎么取得其配置，或者就取不到，希望有人告知，待更新</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/images/properties.png&quot; alt=&quot;我的项目包结构&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;解释下：包名下都有对应一样的配置文件名，方便确定配置文件的位置，测试类也一样，应该能马上看得出&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="properties" scheme="http://yoursite.com/tags/properties/"/>
     
   </entry>
   
