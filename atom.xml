@@ -5,9 +5,9 @@
   <subtitle>The shortest answer is doing.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://wulingqi.github.io/"/>
   <updated>2018-05-10T11:45:34.191Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://wulingqi.github.io/</id>
   
   <author>
     <name>wu07</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>给Word文档加页码</title>
-    <link href="http://yoursite.com/2018/05/10/word/word-page-number/"/>
-    <id>http://yoursite.com/2018/05/10/word/word-page-number/</id>
+    <link href="http://wulingqi.github.io/2018/05/10/word/word-page-number/"/>
+    <id>http://wulingqi.github.io/2018/05/10/word/word-page-number/</id>
     <published>2018-05-10T07:56:02.000Z</published>
     <updated>2018-05-10T11:45:34.191Z</updated>
     
@@ -36,17 +36,17 @@
     
     </summary>
     
-      <category term="Office" scheme="http://yoursite.com/categories/Office/"/>
+      <category term="Office" scheme="http://wulingqi.github.io/categories/Office/"/>
     
     
-      <category term="Word" scheme="http://yoursite.com/tags/Word/"/>
+      <category term="Word" scheme="http://wulingqi.github.io/tags/Word/"/>
     
   </entry>
   
   <entry>
     <title>动态规划入门 Dynamic Programming</title>
-    <link href="http://yoursite.com/2018/04/24/dynamic-programming/"/>
-    <id>http://yoursite.com/2018/04/24/dynamic-programming/</id>
+    <link href="http://wulingqi.github.io/2018/04/24/dynamic-programming/"/>
+    <id>http://wulingqi.github.io/2018/04/24/dynamic-programming/</id>
     <published>2018-04-24T10:18:41.984Z</published>
     <updated>2018-04-25T05:53:52.376Z</updated>
     
@@ -62,17 +62,17 @@
     
     </summary>
     
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://wulingqi.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="http://wulingqi.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>linux软链接和硬链接的区别</title>
-    <link href="http://yoursite.com/2018/04/22/Linux/linux-ln/"/>
-    <id>http://yoursite.com/2018/04/22/Linux/linux-ln/</id>
+    <link href="http://wulingqi.github.io/2018/04/22/Linux/linux-ln/"/>
+    <id>http://wulingqi.github.io/2018/04/22/Linux/linux-ln/</id>
     <published>2018-04-22T04:26:22.000Z</published>
     <updated>2018-04-22T06:26:38.009Z</updated>
     
@@ -90,15 +90,15 @@
     
     </summary>
     
-      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+      <category term="linux" scheme="http://wulingqi.github.io/categories/linux/"/>
     
     
   </entry>
   
   <entry>
     <title>Tesseract使用jTessBoxEditor进行简单样本训练</title>
-    <link href="http://yoursite.com/2018/04/21/python/pythonPhotoRescognition/"/>
-    <id>http://yoursite.com/2018/04/21/python/pythonPhotoRescognition/</id>
+    <link href="http://wulingqi.github.io/2018/04/21/python/pythonPhotoRescognition/"/>
+    <id>http://wulingqi.github.io/2018/04/21/python/pythonPhotoRescognition/</id>
     <published>2018-04-21T01:06:35.000Z</published>
     <updated>2018-04-21T10:18:36.716Z</updated>
     
@@ -113,19 +113,19 @@
     
     </summary>
     
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+      <category term="python" scheme="http://wulingqi.github.io/categories/python/"/>
     
     
-      <category term="tesseract" scheme="http://yoursite.com/tags/tesseract/"/>
+      <category term="tesseract" scheme="http://wulingqi.github.io/tags/tesseract/"/>
     
-      <category term="图像识别" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
+      <category term="图像识别" scheme="http://wulingqi.github.io/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
   <entry>
     <title>人性弱点之使人喜欢你的六种方法</title>
-    <link href="http://yoursite.com/2018/04/18/Literature/human-weakness-two/"/>
-    <id>http://yoursite.com/2018/04/18/Literature/human-weakness-two/</id>
+    <link href="http://wulingqi.github.io/2018/04/18/Literature/human-weakness-two/"/>
+    <id>http://wulingqi.github.io/2018/04/18/Literature/human-weakness-two/</id>
     <published>2018-04-18T06:39:44.000Z</published>
     <updated>2018-04-28T11:27:18.923Z</updated>
     
@@ -142,17 +142,17 @@
     
     </summary>
     
-      <category term="文学范" scheme="http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
+      <category term="文学范" scheme="http://wulingqi.github.io/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
     
     
-      <category term="卡耐基" scheme="http://yoursite.com/tags/%E5%8D%A1%E8%80%90%E5%9F%BA/"/>
+      <category term="卡耐基" scheme="http://wulingqi.github.io/tags/%E5%8D%A1%E8%80%90%E5%9F%BA/"/>
     
   </entry>
   
   <entry>
     <title>(转)IntelliJ IDEA(Android Studio)中如何减少对c盘的占用(相关核心文件和目录介绍)</title>
-    <link href="http://yoursite.com/2018/04/17/idea/configuration-path/"/>
-    <id>http://yoursite.com/2018/04/17/idea/configuration-path/</id>
+    <link href="http://wulingqi.github.io/2018/04/17/idea/configuration-path/"/>
+    <id>http://wulingqi.github.io/2018/04/17/idea/configuration-path/</id>
     <published>2018-04-17T15:14:47.000Z</published>
     <updated>2018-04-17T15:23:27.880Z</updated>
     
@@ -170,15 +170,15 @@
     
     </summary>
     
-      <category term="idea" scheme="http://yoursite.com/categories/idea/"/>
+      <category term="idea" scheme="http://wulingqi.github.io/categories/idea/"/>
     
     
   </entry>
   
   <entry>
     <title>人性的弱点之待人的基本技巧</title>
-    <link href="http://yoursite.com/2018/04/16/Literature/human-weakness/"/>
-    <id>http://yoursite.com/2018/04/16/Literature/human-weakness/</id>
+    <link href="http://wulingqi.github.io/2018/04/16/Literature/human-weakness/"/>
+    <id>http://wulingqi.github.io/2018/04/16/Literature/human-weakness/</id>
     <published>2018-04-16T14:11:46.000Z</published>
     <updated>2018-04-18T06:43:23.518Z</updated>
     
@@ -197,17 +197,17 @@
     
     </summary>
     
-      <category term="文学范" scheme="http://yoursite.com/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
+      <category term="文学范" scheme="http://wulingqi.github.io/categories/%E6%96%87%E5%AD%A6%E8%8C%83/"/>
     
     
-      <category term="卡耐基" scheme="http://yoursite.com/tags/%E5%8D%A1%E8%80%90%E5%9F%BA/"/>
+      <category term="卡耐基" scheme="http://wulingqi.github.io/tags/%E5%8D%A1%E8%80%90%E5%9F%BA/"/>
     
   </entry>
   
   <entry>
     <title>hexo的Unable to create index.lock File exits问题</title>
-    <link href="http://yoursite.com/2018/04/16/hexo-some-quesions/"/>
-    <id>http://yoursite.com/2018/04/16/hexo-some-quesions/</id>
+    <link href="http://wulingqi.github.io/2018/04/16/hexo-some-quesions/"/>
+    <id>http://wulingqi.github.io/2018/04/16/hexo-some-quesions/</id>
     <published>2018-04-16T13:56:31.000Z</published>
     <updated>2018-04-16T14:08:46.594Z</updated>
     
@@ -222,17 +222,17 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+      <category term="hexo" scheme="http://wulingqi.github.io/categories/hexo/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>设计模式之观察者模式</title>
-    <link href="http://yoursite.com/2018/04/16/DesignPatterns/observer/"/>
-    <id>http://yoursite.com/2018/04/16/DesignPatterns/observer/</id>
+    <link href="http://wulingqi.github.io/2018/04/16/DesignPatterns/observer/"/>
+    <id>http://wulingqi.github.io/2018/04/16/DesignPatterns/observer/</id>
     <published>2018-04-16T12:59:03.000Z</published>
     <updated>2018-04-16T13:50:52.348Z</updated>
     
@@ -248,17 +248,17 @@
     
     </summary>
     
-      <category term="设计模式" scheme="http://yoursite.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://wulingqi.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="观察者模式" scheme="http://yoursite.com/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+      <category term="观察者模式" scheme="http://wulingqi.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Oracle dense_rank函数问题解决中ing</title>
-    <link href="http://yoursite.com/2018/04/15/Oracle/dense-rank/"/>
-    <id>http://yoursite.com/2018/04/15/Oracle/dense-rank/</id>
+    <link href="http://wulingqi.github.io/2018/04/15/Oracle/dense-rank/"/>
+    <id>http://wulingqi.github.io/2018/04/15/Oracle/dense-rank/</id>
     <published>2018-04-15T11:37:46.000Z</published>
     <updated>2018-04-15T12:08:24.846Z</updated>
     
@@ -276,19 +276,19 @@
     
     </summary>
     
-      <category term="Oracle" scheme="http://yoursite.com/categories/Oracle/"/>
+      <category term="Oracle" scheme="http://wulingqi.github.io/categories/Oracle/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="leetCode" scheme="http://yoursite.com/tags/leetCode/"/>
+      <category term="leetCode" scheme="http://wulingqi.github.io/tags/leetCode/"/>
     
   </entry>
   
   <entry>
     <title>2018搬瓦工搭建ss（小笔记）</title>
-    <link href="http://yoursite.com/2018/04/15/vps-ss/"/>
-    <id>http://yoursite.com/2018/04/15/vps-ss/</id>
+    <link href="http://wulingqi.github.io/2018/04/15/vps-ss/"/>
+    <id>http://wulingqi.github.io/2018/04/15/vps-ss/</id>
     <published>2018-04-15T09:01:26.000Z</published>
     <updated>2018-04-17T04:24:58.063Z</updated>
     
@@ -305,14 +305,14 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>java编程思想 内部类学习笔记（注意其中的jdk版本问题）</title>
-    <link href="http://yoursite.com/2018/04/14/notes/innernal-class/"/>
-    <id>http://yoursite.com/2018/04/14/notes/innernal-class/</id>
+    <link href="http://wulingqi.github.io/2018/04/14/notes/innernal-class/"/>
+    <id>http://wulingqi.github.io/2018/04/14/notes/innernal-class/</id>
     <published>2018-04-14T15:11:26.000Z</published>
     <updated>2018-04-22T12:39:11.190Z</updated>
     
@@ -327,15 +327,15 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
   </entry>
   
   <entry>
     <title>抽象类和接口(非blog，Not recommended)(更新中)</title>
-    <link href="http://yoursite.com/2018/04/12/notes/abstract-class/"/>
-    <id>http://yoursite.com/2018/04/12/notes/abstract-class/</id>
+    <link href="http://wulingqi.github.io/2018/04/12/notes/abstract-class/"/>
+    <id>http://wulingqi.github.io/2018/04/12/notes/abstract-class/</id>
     <published>2018-04-12T08:54:54.000Z</published>
     <updated>2018-04-17T11:37:26.326Z</updated>
     
@@ -350,17 +350,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="java笔记" scheme="http://yoursite.com/tags/java%E7%AC%94%E8%AE%B0/"/>
+      <category term="java笔记" scheme="http://wulingqi.github.io/tags/java%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Java访问权限修饰符(非blog，Not recommended)(更新中)</title>
-    <link href="http://yoursite.com/2018/04/12/notes/ppt/"/>
-    <id>http://yoursite.com/2018/04/12/notes/ppt/</id>
+    <link href="http://wulingqi.github.io/2018/04/12/notes/ppt/"/>
+    <id>http://wulingqi.github.io/2018/04/12/notes/ppt/</id>
     <published>2018-04-12T08:51:23.000Z</published>
     <updated>2018-04-17T11:36:15.957Z</updated>
     
@@ -377,17 +377,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="java笔记" scheme="http://yoursite.com/tags/java%E7%AC%94%E8%AE%B0/"/>
+      <category term="java笔记" scheme="http://wulingqi.github.io/tags/java%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>easyMock的简单使用（详细参考官方文档，第二问更新中）</title>
-    <link href="http://yoursite.com/2018/04/09/mock/easyMock-simple-use/"/>
-    <id>http://yoursite.com/2018/04/09/mock/easyMock-simple-use/</id>
+    <link href="http://wulingqi.github.io/2018/04/09/mock/easyMock-simple-use/"/>
+    <id>http://wulingqi.github.io/2018/04/09/mock/easyMock-simple-use/</id>
     <published>2018-04-09T12:14:44.000Z</published>
     <updated>2018-04-14T01:01:51.745Z</updated>
     
@@ -402,19 +402,19 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="Junit" scheme="http://yoursite.com/tags/Junit/"/>
+      <category term="Junit" scheme="http://wulingqi.github.io/tags/Junit/"/>
     
-      <category term="easyMock" scheme="http://yoursite.com/tags/easyMock/"/>
+      <category term="easyMock" scheme="http://wulingqi.github.io/tags/easyMock/"/>
     
   </entry>
   
   <entry>
     <title>IDEA中dependencies和libraries的区别</title>
-    <link href="http://yoursite.com/2018/04/09/idea/dependencies-and-libraries/"/>
-    <id>http://yoursite.com/2018/04/09/idea/dependencies-and-libraries/</id>
+    <link href="http://wulingqi.github.io/2018/04/09/idea/dependencies-and-libraries/"/>
+    <id>http://wulingqi.github.io/2018/04/09/idea/dependencies-and-libraries/</id>
     <published>2018-04-09T11:50:06.000Z</published>
     <updated>2018-04-09T12:13:55.871Z</updated>
     
@@ -431,16 +431,16 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+      <category term="idea" scheme="http://wulingqi.github.io/tags/idea/"/>
     
   </entry>
   
   <entry>
     <title>idea-webApp简单运行环境配置</title>
-    <link href="http://yoursite.com/2018/04/08/idea/idea-webApp-simple/"/>
-    <id>http://yoursite.com/2018/04/08/idea/idea-webApp-simple/</id>
+    <link href="http://wulingqi.github.io/2018/04/08/idea/idea-webApp-simple/"/>
+    <id>http://wulingqi.github.io/2018/04/08/idea/idea-webApp-simple/</id>
     <published>2018-04-08T04:41:10.000Z</published>
     <updated>2018-04-09T12:03:15.858Z</updated>
     
@@ -457,21 +457,21 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
+      <category term="idea" scheme="http://wulingqi.github.io/tags/idea/"/>
     
-      <category term="applet" scheme="http://yoursite.com/tags/applet/"/>
+      <category term="applet" scheme="http://wulingqi.github.io/tags/applet/"/>
     
   </entry>
   
   <entry>
     <title>javaIO流的总结（更新中）</title>
-    <link href="http://yoursite.com/2018/04/07/IO/javaIO-summary/"/>
-    <id>http://yoursite.com/2018/04/07/IO/javaIO-summary/</id>
+    <link href="http://wulingqi.github.io/2018/04/07/IO/javaIO-summary/"/>
+    <id>http://wulingqi.github.io/2018/04/07/IO/javaIO-summary/</id>
     <published>2018-04-07T14:11:28.000Z</published>
     <updated>2018-04-14T15:16:55.733Z</updated>
     
@@ -489,17 +489,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="IO" scheme="http://yoursite.com/tags/IO/"/>
+      <category term="IO" scheme="http://wulingqi.github.io/tags/IO/"/>
     
   </entry>
   
   <entry>
     <title>java中自动拆装箱的一些问题</title>
-    <link href="http://yoursite.com/2018/04/05/essays/auto-unpacking-packing/"/>
-    <id>http://yoursite.com/2018/04/05/essays/auto-unpacking-packing/</id>
+    <link href="http://wulingqi.github.io/2018/04/05/essays/auto-unpacking-packing/"/>
+    <id>http://wulingqi.github.io/2018/04/05/essays/auto-unpacking-packing/</id>
     <published>2018-04-05T07:08:41.000Z</published>
     <updated>2018-04-14T15:15:44.164Z</updated>
     
@@ -514,17 +514,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>关于java.lang.UnsupportedOperationException异常</title>
-    <link href="http://yoursite.com/2018/04/05/essays/asListException/"/>
-    <id>http://yoursite.com/2018/04/05/essays/asListException/</id>
+    <link href="http://wulingqi.github.io/2018/04/05/essays/asListException/"/>
+    <id>http://wulingqi.github.io/2018/04/05/essays/asListException/</id>
     <published>2018-04-05T03:37:56.000Z</published>
     <updated>2018-04-05T07:01:37.834Z</updated>
     
@@ -540,10 +540,10 @@
     
     </summary>
     
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+      <category term="java" scheme="http://wulingqi.github.io/categories/java/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://wulingqi.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
